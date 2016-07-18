@@ -44,6 +44,7 @@
     //$service = isset($_GET['service']) ? $_GET['service'] : '%';
     //$method = isset($_GET['method']) ? $_GET['method'] : '%';
 
+
     $catalog = isset($_POST['catalog']) ? $_POST['catalog'] : '';
     $dataset = isset($_POST['dataset']) ? $_POST['dataset'] : '';
     $distribution = isset($_POST['distribution']) ? $_POST['distribution'] : '';
@@ -65,5 +66,5 @@
         'distribution'  => $distribution,
     ));
 
-
 // EOF
+?>

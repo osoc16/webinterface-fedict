@@ -1,0 +1,23 @@
+{
+  "name": "webinterface-fedict",
+  "version": "1.0.0",
+  "description": "Webinterface for WSDL2DCAT tool (fedict)",
+  "main": "index.js",
+  "dependencies": {
+    "ldf-client": "^1.4.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/osoc16/webinterface-fedict.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/osoc16/webinterface-fedict/issues"
+  },
+  "homepage": "https://github.com/osoc16/webinterface-fedict#readme"
+}

@@ -22,5 +22,20 @@
         <div class="footer">
             </br>Copyright (c) 2016 Open Knowledge Belgium - Fedict
         </div>
+
+    <script src='http://client.linkeddatafragments.org/scripts/ldf-client-jquery-packaged.js'></script>```
+
+
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+    <script>
+        var fragmentsClient = new ldf.FragmentsClient('http://fragments.dbpedia.org/2014/en');
+
+        var query = 'SELECT * { ?s ?p <http://dbpedia.org/resource/Belgium>. ?s ?p ?o } LIMIT 100',
+                results = new ldf.SparqlIterator(query, { fragmentsClient: fragmentsClient });
+        console.log('ohjo')
+        results.on('data', function (data) {
+           console.log(data)
+        });
+    </script>
 </body>
 </html>
