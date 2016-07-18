@@ -1,0 +1,51 @@
+{% extends 'layout.twig' %}
+
+{% set pageTitle = 'Webservices' %}
+
+{% block pageContent %}
+    <form action="index.php" method="post">
+        <input name="catalog" type="text" placeholder="Catalog" value="{{ catalog }}"/>
+        <input name="dataset" type="text" placeholder="Dataset" value="{{ dataset }}"/>
+        <input name="distribution" type="text" placeholder="Distribution" value="{{ distribution }}" />
+        <input type="submit" value="Search">
+    </form>
+
+
+    <div  class="tbl-header">
+        <table cellpadding="0" cellspacing="0" border="0">
+            <thead>
+            <tr>
+                <th>name</th>
+                <th>description</th>
+                <th>uri</th>
+            </tr>
+            </thead>
+        </table>
+    </div>
+    <div  class="tbl-content">
+    <table cellpadding="0" cellspacing="0" border="0">
+    <tbody>
+
+    {% for service in services %}
+        <a href="">
+            <tr onclick="document.location = 'webservice.php?name={{ service.name }}'
+                   +'&description={{ service.description }}'
+                   +'&method={{ service.method }}';">
+                <td>{{ service.name }}</td>
+                <td>{{ service.description }}</td>
+                <td>{{ service.method }}</td>
+            </tr>
+        </a>
+    {% endfor %}
+    </tbody>
+    </table>
+    </div>
+
+    <h2>URL Parameters</h2>
+    <p>Catalog = {{ catalog }}</p>
+    <p>Dataset = {{ dataset }}</p>
+    <p>method = {{ distribution }}</p>
+
+    <h2>Dump</h2>
+    {{ dump(services) }}
+{% endblock %}

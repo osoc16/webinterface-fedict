@@ -4,16 +4,23 @@
     <title>{{ pageTitle }}</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <link rel="stylesheet" href="../../dist/css/generic.css" />
-    <link rel="stylesheet" href="../../dist/css/style.css" />
+    <link rel="stylesheet" href="../dist/css/generic.css" />
+    <link rel="stylesheet" href="../dist/css/style.css" />
 </head>
 <body>
-    <div class="pagecontent">
-        {% block pageContent %}
-        {% endblock %}
+    <a href="index.php"><h1>Webservices</h1></a>
+    <div class="nav">
+        <ul>
+            <li><a href="index.php">Home</a></li>
+            <li><a href="#">About</a></li>
+        </ul>
     </div>
-    <div class="about">
-        </br>Copyright (c) 2016 Open Knowledge Belgium - Fedict
-    </div>
+        <div class="pagecontent">
+            {% block pageContent %}
+            {% endblock %}
+        </div>
+        <div class="footer">
+            </br>Copyright (c) 2016 Open Knowledge Belgium - Fedict
+        </div>
 </body>
 </html>
