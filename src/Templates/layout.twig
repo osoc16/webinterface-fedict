@@ -29,19 +29,22 @@
         /*
         var query = 'SEL    ECT * { ?s a <http://www.w3.org/ns/dcat#Catalog> . ' +
                         '       <http://fsb.rovin.be> ?p ?o .'
+
+        var query = 'SELECT * { ?s a <http://www.w3.org/ns/dcat#Catalog> . ' +
+                        '       <...> ?p ?o .'
                             +'} LIMIT 100',
                 results = new ldf.SparqlIterator(query, { fragmentsClient: fragmentsClient });
         */
 
       /*  var query = 'SELECT * { ?s <http://www.w3.org/ns/dcat#dataset> ?o. ' +
-                                '?s ?p ?o .'
+                                '<...>  ?p ?o .'
 
                         +'} LIMIT 100',
                 results = new ldf.SparqlIterator(query, { fragmentsClient: fragmentsClient });
     */
 
 /*        var query = 'SELECT * { ?s <http://www.w3.org/ns/dcat#distribution> ?o. ' +
-                        '?s ?p ?o .'
+                        '<...>  ?p ?o .'
 
                         +'} LIMIT 100',
                 results = new ldf.SparqlIterator(query, { fragmentsClient: fragmentsClient });

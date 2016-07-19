@@ -5,8 +5,30 @@
 {% block pageContent %}
     <h1>Webservice Detailpage</h1>
 
-    <h2>{{ name }}</h2>
-    <p>Description: {{ description }}</p>
-    <p>Method: {{ method }}</p>
+    <script src='http://client.linkeddatafragments.org/scripts/ldf-client-jquery-packaged.js'></script>
+    <script>
+        var fragmentsClient = new ldf.FragmentsClient('http://185.14.185.158:5000/triplestore');
+        // var queryDescription = 'SELECT * {<'+ "{{ subject }}" + '>  <http://purl.org/dc/terms/description> ?o. ?s ?p ?o } LIMIT 5',
+         var queryDescription = 'SELECT * {<'+ "{{ subject }}" + '>  ?p ?o} LIMIT 5',
 
+        //var queryDescription = 'SELECT * {<'+ "{{ subject }}" + '>  <http://purl.org/dc/terms/description> ?o. ?s ?p ?o } LIMIT 5',
+                results = new ldf.SparqlIterator(queryDescription, { fragmentsClient: fragmentsClient });
+        results.on('data', function (data) {
+            console.log(data);
+            $(".pagecontent").append("<h2>Description</h2>");
+            $.each(data, function(key, value) {
+                if (key == "?o") $(".pagecontent").append("<p>" + value + "</p>");
+            });
+        });
+        var queryMethods = 'SELECT * { ?s  <http://www.w3.org/ns/dcat#distribution> ?o. ?s ?p ?o  } LIMIT 10',
+                results = new ldf.SparqlIterator(queryMethods, { fragmentsClient: fragmentsClient });
+        results.on('data', function (data) {
+            console.log(data);
+            $(".pagecontent").append("<h2>Methods</h2>");
+            $.each(data, function(key, value) {
+                if (key == "?o") $(".pagecontent").append("<p>" + value + "</p>");
+            });
+        });
+
+    </script>
 {% endblock %}

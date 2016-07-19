@@ -4,14 +4,29 @@
 
 {% block pageContent %}
     <form action="index.php" method="post">
-        <input name="catalog" type="text" placeholder="Catalog" value="{{ catalog }}"/>
-        <input name="dataset" type="text" placeholder="Dataset" value="{{ dataset }}"/>
-        <input name="distribution" type="text" placeholder="Distribution" value="{{ distribution }}" />
+        <select name="searchOption">
+            {% if searchOption == 'Catalog' %}
+                <option value="Catalog" selected>Catalog</option>
+            {% else %}
+                <option value="Catalog">Catalog</option>
+            {% endif %}
+            {% if searchOption == 'Dataset' %}
+                <option value="Dataset" selected>Dataset</option>
+            {% else %}
+                <option value="Dataset">Dataset</option>
+            {% endif %}
+            {% if searchOption == 'Distribution' %}
+                <option value="Distribution" selected>Distribution</option>
+            {% else %}
+                <option value="Distribution">Distribution</option>
+            {% endif %}
+        </select>
+        <input name="search" type="text" placeholder="Enter search term" value="{{ search }}"/>
         <input type="submit" value="Search">
     </form>
 
 
-    <div  class="tbl-header">
+    <div class="tbl-header">
         <table cellpadding="0" cellspacing="0" border="0">
             <thead>
             <tr>
@@ -28,51 +43,62 @@
 
     <script src='http://client.linkeddatafragments.org/scripts/ldf-client-jquery-packaged.js'></script>
     <script>
-        var fragmentsClient = new ldf.FragmentsClient('http://fragments.dbpedia.org/2014/en');
+        var fragmentsClient = new ldf.FragmentsClient('http://185.14.185.158:5000/triplestore');
+/* catalog and dataset search query */
+        var query = 'SELECT * { ?s a <http://www.w3.org/ns/dcat#' + "{{ searchOption }}" + '> . ' +
+                 '?s <http://purl.org/dc/terms/title> "' + "{{ search }}" + '"@en} LIMIT 10',
+            results = new ldf.SparqlIterator(query, { fragmentsClient: fragmentsClient });
 
-        var query = 'SELECT * { ?s ?p <http://dbpedia.org/resource/Belgium>. ?s ?p ?o } LIMIT 100',
-                results = new ldf.SparqlIterator(query, { fragmentsClient: fragmentsClient });
-        results.on('data', function (data) {
-            var subject = "";
-            var predicate = "";
-            var object = "";
-            $.each(data, function(key, value) {
-                console.log("Key:" + key + " | value: " + value);
-                if (key == "?s") subject = value;
-                else if (key == "?p") predicate = value;
-                else if (key == "?o") {
-                    object = value
-                    var output =
-                            '<tr>' +
-                            '<td>'+ subject.substring(subject.lastIndexOf('/') + 1) +'</td>' +
-                            '<td>'+ predicate.substring(subject.lastIndexOf('/') + 1) +'</td>' +
-                            '<td>'+ object.substring(subject.lastIndexOf('/') + 1) +'</td>' +
-                            '</tr>';
-                    console.log("Subject: " + subject + " - Predicate: " + predicate + " - Object: " + object)
-                    $("tbody").append(output);
-                }
-            });
+
+        /* dataset search query
+         var query = 'SELECT * { ?s a <http://www.w3.org/ns/dcat#' + "{{ searchOption }}" + '> . ' +
+         '?s <http://purl.org/dc/terms/title>"' + "{{ search }}" + '"@en} LIMIT 10',
+         results = new ldf.SparqlIterator(query, { fragmentsClient: fragmentsClient });
+         */
+
+
+
+
+
+        //+        '?s <http://purl.org/dc/terms/title> <{{ search }}> ?o .
+        //<{{ search }}>
+        //var query = 'SELECT * {?s  ?p <http://www.w3.org/ns/dcat#' + "{{ searchOption }}" + '>. ?s ?p ?o } LIMIT 20',
+    //  var query = 'SELECT * {<' + "{{ search }}" + '>  ?p <http://www.w3.org/ns/dcat#' + "{{ searchOption }}" + '>. ?s ?p ?o } LIMIT 20',
+              //      results = new ldf.SparqlIterator(query, { fragmentsClient: fragmentsClient });
+        if ("{{ search }}" == ""){
+            var query = 'SELECT * {?s  ?p <http://www.w3.org/ns/dcat#' + "{{ searchOption }}" + '>. ?s ?p ?o } LIMIT 20',
+            results = new ldf.SparqlIterator(query, { fragmentsClient: fragmentsClient });
+        }
+            results.on('data', function (data) {
+                var subject = "";
+                var predicate = "";
+                var object = "";
+                $.each(data, function(key, value) {
+                    console.log("Key:" + key + " | value: " + value);
+                    if (key == "?s") subject = value;
+                    else if (key == "?p") predicate = value;
+                    else if (key == "?o") {
+                        object = value
+                        var output =
+                                '<tr>' +
+                                '<td>'+ subject +'</td>' +
+                                '<td>'+ predicate + '</td>' +
+                                '<td>'+ object +'</td>' +
+                                '</tr>';
+                        console.log("Subject: " + subject + " - Predicate: " + predicate + " - Object: " + object);
+                        $("tbody").append(output);
+                        $('tr').click(function() {
+                            document.location = 'webservice.php?subject=' + subject;
+                        });
+                    }
+                });
         });
-
     </script>
-    {% for service in services %}
-            <tr onclick="document.location = 'webservice.php?name={{ service.name }}'
-                   +'&description={{ service.description }}'
-                   +'&method={{ service.method }}';">
-                <td>{{ service.name }}</td>
-                <td>{{ service.description }}</td>
-                <td>{{ service.method }}</td>
-            </tr>
-    {% endfor %}
     </tbody>
     </table>
     </div>
 
     <h2>URL Parameters</h2>
-    <p>Catalog = {{ catalog }}</p>
-    <p>Dataset = {{ dataset }}</p>
-    <p>method = {{ distribution }}</p>
-
-    <h2>Dump</h2>
-    {{ dump(services) }}
+    <p>Search Option = {{ searchOption }}</p>
+    <p>Search = {{ search }}</p>
 {% endblock %}
