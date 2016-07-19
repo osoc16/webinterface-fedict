@@ -15,9 +15,9 @@
         <table cellpadding="0" cellspacing="0" border="0">
             <thead>
             <tr>
-                <th>name</th>
-                <th>description</th>
-                <th>uri</th>
+                <th>Subject</th>
+                <th>Predicate</th>
+                <th>Object</th>
             </tr>
             </thead>
         </table>
@@ -26,8 +26,36 @@
     <table cellpadding="0" cellspacing="0" border="0">
     <tbody>
 
+    <script src='http://client.linkeddatafragments.org/scripts/ldf-client-jquery-packaged.js'></script>
+    <script>
+        var fragmentsClient = new ldf.FragmentsClient('http://fragments.dbpedia.org/2014/en');
+
+        var query = 'SELECT * { ?s ?p <http://dbpedia.org/resource/Belgium>. ?s ?p ?o } LIMIT 100',
+                results = new ldf.SparqlIterator(query, { fragmentsClient: fragmentsClient });
+        results.on('data', function (data) {
+            var subject = "";
+            var predicate = "";
+            var object = "";
+            $.each(data, function(key, value) {
+                console.log("Key:" + key + " | value: " + value);
+                if (key == "?s") subject = value;
+                else if (key == "?p") predicate = value;
+                else if (key == "?o") {
+                    object = value
+                    var output =
+                            '<tr>' +
+                            '<td>'+ subject.substring(subject.lastIndexOf('/') + 1) +'</td>' +
+                            '<td>'+ predicate.substring(subject.lastIndexOf('/') + 1) +'</td>' +
+                            '<td>'+ object.substring(subject.lastIndexOf('/') + 1) +'</td>' +
+                            '</tr>';
+                    console.log("Subject: " + subject + " - Predicate: " + predicate + " - Object: " + object)
+                    $("tbody").append(output);
+                }
+            });
+        });
+
+    </script>
     {% for service in services %}
-        <a href="">
             <tr onclick="document.location = 'webservice.php?name={{ service.name }}'
                    +'&description={{ service.description }}'
                    +'&method={{ service.method }}';">
@@ -35,7 +63,6 @@
                 <td>{{ service.description }}</td>
                 <td>{{ service.method }}</td>
             </tr>
-        </a>
     {% endfor %}
     </tbody>
     </table>
