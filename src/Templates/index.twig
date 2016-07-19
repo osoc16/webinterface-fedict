@@ -5,20 +5,20 @@
 {% block pageContent %}
     <form action="index.php" method="post">
         <select name="searchOption">
-            {% if searchOption == 'catalog' %}
-                <option value="catalog" selected>Catalog</option>
+            {% if searchOption == 'Catalog' %}
+                <option value="Catalog" selected>Catalog</option>
             {% else %}
-                <option value="catalog">Catalog</option>
+                <option value="Catalog">Catalog</option>
             {% endif %}
-            {% if searchOption == 'dataset' %}
-                <option value="dataset" selected>Dataset</option>
+            {% if searchOption == 'Dataset' %}
+                <option value="Dataset" selected>Dataset</option>
             {% else %}
-                <option value="dataset">Dataset</option>
+                <option value="Dataset">Dataset</option>
             {% endif %}
-            {% if searchOption == 'distribution' %}
-                <option value="distribution" selected>Distribution</option>
+            {% if searchOption == 'Distribution' %}
+                <option value="Distribution" selected>Distribution</option>
             {% else %}
-                <option value="distribution">Distribution</option>
+                <option value="Distribution">Distribution</option>
             {% endif %}
         </select>
         <input name="search" type="text" placeholder="Enter search term" value="{{ search }}"/>
@@ -44,9 +44,7 @@
     <script src='http://client.linkeddatafragments.org/scripts/ldf-client-jquery-packaged.js'></script>
     <script>
         var fragmentsClient = new ldf.FragmentsClient('http://185.14.185.158:5000/triplestore');
-        loadData("Dataset", "");
-        function loadData(type, filter){
-            var query = 'SELECT * { ?s ?p <http://www.w3.org/ns/dcat#Dataset>. ?s ?p ?o } LIMIT 100',
+            var query = 'SELECT * { ?s ?p <http://www.w3.org/ns/dcat#' + "{{ searchOption }}" + '>. ?s ?p ?o } LIMIT 100',
                     results = new ldf.SparqlIterator(query, { fragmentsClient: fragmentsClient });
             results.on('data', function (data) {
                 var subject = "";
@@ -64,14 +62,11 @@
                                 '<td>'+ predicate + '</td>' +
                                 '<td>'+ object +'</td>' +
                                 '</tr>';
-                        console.log("Subject: " + subject + " - Predicate: " + predicate + " - Object: " + object)
+                        console.log("Subject: " + subject + " - Predicate: " + predicate + " - Object: " + object);
                         $("tbody").append(output);
                     }
                 });
-            });
-        }
-
-
+        });
     </script>
     {% for service in services %}
             <tr onclick="document.location = 'webservice.php?name={{ service.name }}'
