@@ -40,18 +40,14 @@
     // URL structure: baseURI/servicefamily/service#method
     // Example:
     // http://localhost/webinterface-fedict/dist/?serviceFamily=TestServiceFamily&service=TestService&method=TestMethod
-    $name = isset($_GET['name']) ? $_GET['name'] : '';
-	$description = isset($_GET['description']) ? $_GET['description'] : '';
-	$method = isset($_GET['method']) ? $_GET['method'] : '';
+    $subject = isset($_GET['subject']) ? $_GET['subject'] : '';
 
 	// load template
 	$tpl = $twig->loadTemplate('webservice.twig');
 
 	// render template with our data
 	echo $tpl->render(array(
-		'name'  => $name,
-		'description'  => $description,
-		'method'  => $method,
+        'subject'=> $subject,
     ));
 
 

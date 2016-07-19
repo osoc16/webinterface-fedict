@@ -36,29 +36,16 @@
 	 * Select filter
 	 * ----------------------------------------------------------------
 	 */
-	//$option = isset($_POST['option']) ? $_POST['option'] : '%';
-    // URL structure: baseURI/servicefamily/service#method
-    // Example:
-    // http://localhost/webinterface-fedict/dist/?serviceFamily=TestServiceFamily&service=TestService&method=TestMethod
-    //$serviceFamily = isset($_GET['serviceFamily']) ? $_GET['serviceFamily'] : '%';
-    //$service = isset($_GET['service']) ? $_GET['service'] : '%';
-    //$method = isset($_GET['method']) ? $_GET['method'] : '%';
 
-    $searchOption = isset($_POST['searchOption']) ? $_POST['searchOption'] : '';
+    $searchOption = isset($_POST['searchOption']) ? $_POST['searchOption'] : 'Catalog';
     $search = isset($_POST['search']) ? $_POST['search'] : '';
 
-	$services = array(
-        array('name' => "PersonService",'description' => "Some description is here....", 'method' => "GetPersonDetails"),
-        array('name' => "SomeService",'description' => "Second desc is here....", 'method' => "GetServicex")
-
-    );
 
 	// load template
 	$tpl = $twig->loadTemplate('index.twig');
 
 	// render template with our data
 	echo $tpl->render(array(
-		'services' => $services,
         'search'  => $search,
         'searchOption'  => $searchOption,
     ));

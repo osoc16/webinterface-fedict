@@ -44,7 +44,11 @@
     <script src='http://client.linkeddatafragments.org/scripts/ldf-client-jquery-packaged.js'></script>
     <script>
         var fragmentsClient = new ldf.FragmentsClient('http://185.14.185.158:5000/triplestore');
-            var query = 'SELECT * { ?s ?p <http://www.w3.org/ns/dcat#' + "{{ searchOption }}" + '>. ?s ?p ?o } LIMIT 100',
+        //var query = 'SELECT * { ?s  <http://www.w3.org/ns/dcat#distribution> ?o. ' +
+        //                '?s <http://purl.org/dc/terms/title>' <'+ "{{ search }}"+ '>' . ?s ?p ?o LIMIT 10',
+        //        results = new ldf.SparqlIterator(query, { fragmentsClient: fragmentsClient });
+        var query = 'SELECT * {?s  ?p <http://www.w3.org/ns/dcat#' + "{{ searchOption }}" + '>. ?s ?p ?o } LIMIT 20',
+      // var query = 'SELECT * {<' + "{{ search }}" + '>  ?p <http://www.w3.org/ns/dcat#' + "{{ searchOption }}" + '>. ?s ?p ?o } LIMIT 20',
                     results = new ldf.SparqlIterator(query, { fragmentsClient: fragmentsClient });
             results.on('data', function (data) {
                 var subject = "";
@@ -64,19 +68,13 @@
                                 '</tr>';
                         console.log("Subject: " + subject + " - Predicate: " + predicate + " - Object: " + object);
                         $("tbody").append(output);
+                        $('tr').click(function() {
+                            document.location = 'webservice.php?subject=' + subject;
+                        });
                     }
                 });
         });
     </script>
-    {% for service in services %}
-            <tr onclick="document.location = 'webservice.php?name={{ service.name }}'
-                   +'&description={{ service.description }}'
-                   +'&method={{ service.method }}';">
-                <td>{{ service.name }}</td>
-                <td>{{ service.description }}</td>
-                <td>{{ service.method }}</td>
-            </tr>
-    {% endfor %}
     </tbody>
     </table>
     </div>
