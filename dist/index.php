@@ -44,10 +44,8 @@
     //$service = isset($_GET['service']) ? $_GET['service'] : '%';
     //$method = isset($_GET['method']) ? $_GET['method'] : '%';
 
-
-    $catalog = isset($_POST['catalog']) ? $_POST['catalog'] : '';
-    $dataset = isset($_POST['dataset']) ? $_POST['dataset'] : '';
-    $distribution = isset($_POST['distribution']) ? $_POST['distribution'] : '';
+    $searchOption = isset($_POST['searchOption']) ? $_POST['searchOption'] : '';
+    $search = isset($_POST['search']) ? $_POST['search'] : '';
 
 	$services = array(
         array('name' => "PersonService",'description' => "Some description is here....", 'method' => "GetPersonDetails"),
@@ -61,9 +59,8 @@
 	// render template with our data
 	echo $tpl->render(array(
 		'services' => $services,
-        'catalog'  => $catalog,
-        'dataset'  => $dataset,
-        'distribution'  => $distribution,
+        'search'  => $search,
+        'searchOption'  => $searchOption,
     ));
 
 // EOF

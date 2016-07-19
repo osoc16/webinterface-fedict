@@ -28,25 +28,25 @@
         var fragmentsClient = new ldf.FragmentsClient('http://185.14.185.158:5000/triplestore');
         /*
         var query = 'SELECT * { ?s a <http://www.w3.org/ns/dcat#Catalog> . ' +
-                        '       <http://fsb.rovin.be> ?p ?o .'
+                        '       <...> ?p ?o .'
                             +'} LIMIT 100',
                 results = new ldf.SparqlIterator(query, { fragmentsClient: fragmentsClient });
         */
 
       /*  var query = 'SELECT * { ?s <http://www.w3.org/ns/dcat#dataset> ?o. ' +
-                                '?s ?p ?o .'
+                                '<...>  ?p ?o .'
 
                         +'} LIMIT 100',
                 results = new ldf.SparqlIterator(query, { fragmentsClient: fragmentsClient });
     */
 
 /*        var query = 'SELECT * { ?s <http://www.w3.org/ns/dcat#distribution> ?o. ' +
-                        '?s ?p ?o .'
+                        '<...>  ?p ?o .'
 
                         +'} LIMIT 100',
                 results = new ldf.SparqlIterator(query, { fragmentsClient: fragmentsClient });
 */
-        var query = 'SELECT * { <http://fsb.belgium.be/edrl/ActivityService/v1_00> ?p ?o. '
+        var query = 'SELECT * { <...>  ?p ?o. '
                         +'} LIMIT 100',
                 results = new ldf.SparqlIterator(query, { fragmentsClient: fragmentsClient });
 

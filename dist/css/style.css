@@ -81,7 +81,9 @@ input[type=text], select {
     box-sizing: border-box;
     background-color: rgba(255,255,255,0.3);
 }
-input[type=text]:hover {background-color: #00868c;}
+
+option {background:#00868c;}
+input[type=text]:hover, select:hover {background-color: #00868c;}
 
 input[type=submit] {
     max-width: 100%;
