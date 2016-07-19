@@ -8,7 +8,8 @@
     <script src='http://client.linkeddatafragments.org/scripts/ldf-client-jquery-packaged.js'></script>
     <script>
         var fragmentsClient = new ldf.FragmentsClient('http://185.14.185.158:5000/triplestore');
-        var queryDescription = 'SELECT * {<'+ "{{ subject }}" + '>  <http://purl.org/dc/terms/description> ?o. ?s ?p ?o } LIMIT 5',
+        // var queryDescription = 'SELECT * {<'+ "{{ subject }}" + '>  <http://purl.org/dc/terms/description> ?o. ?s ?p ?o } LIMIT 5',
+         var queryDescription = 'SELECT * {<'+ "{{ subject }}" + '>  ?p ?o} LIMIT 5',
 
         //var queryDescription = 'SELECT * {<'+ "{{ subject }}" + '>  <http://purl.org/dc/terms/description> ?o. ?s ?p ?o } LIMIT 5',
                 results = new ldf.SparqlIterator(queryDescription, { fragmentsClient: fragmentsClient });
