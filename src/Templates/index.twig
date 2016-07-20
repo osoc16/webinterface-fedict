@@ -47,7 +47,6 @@
 
         var query = 'SELECT ?s ?p ?o { ?s a <http://www.w3.org/ns/dcat#' + "{{ searchOption }}" + '> . ' +
                         '?s <http://purl.org/dc/terms/title> ?o . ' +
-                  //      'FILTER (regex( ?o,"'+ "{{ search }}" + '" )) .' +
                         '?s ?p ?o' +
                         ' } ',
                 results = new ldf.SparqlIterator(query, { fragmentsClient: fragmentsClient });
@@ -57,17 +56,14 @@
             var query = 'SELECT ?s ?p ?o WHERE {?s  ?p <http://www.w3.org/ns/dcat#' + "{{ searchOption }}" + '>. ?s ?p ?o } ',
             results = new ldf.SparqlIterator(query, { fragmentsClient: fragmentsClient });
         }
-        //             else if (key == "?o" &&(value.toLowerCase().indexOf("{{ search }}".toLowerCase()) > -1   || value == "")) {
-
-
         var searchOption = "{{ search }}";
             results.on('data', function (data ) {
                 var subject = "";
                 var predicate = "";
                 var object = "";
-
+                console.log(data)
                 $.each(data, function(key, value) {
-                  // console.log("Key:" + key + " | value: " + value);
+                   console.log("Key:" + key + " | value: " + value);
                     if (key == "?s") subject = value;
                     else if (key == "?p") predicate = value;
                       else if (key == "?o" && (value.toLowerCase().indexOf(searchOption.toLowerCase()) > -1 || searchOption == "")  ) {
@@ -84,6 +80,8 @@
                         $('tr').click(function() {
                             document.location = 'webservice.php?subject=' + subject;
                         });
+                    }else{
+                        console.log("empty object")
                     }
                 });
         });
