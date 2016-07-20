@@ -47,10 +47,11 @@
 
         var query = 'SELECT ?s ?p ?o { ?s a <http://www.w3.org/ns/dcat#' + "{{ searchOption }}" + '> . ' +
                         '?s <http://purl.org/dc/terms/title> ?o . ' +
-                        'FILTER (regex( ?o,"'+ "{{ search }}" + '" )) .' +
+                        /*'FILTER (regex( ?o,"'+ "{{ search }}" + '" )) .' + */
                         '?s ?p ?o' +
-                        ' } LIMIT 10',
+                        ' } ',
                 results = new ldf.SparqlIterator(query, { fragmentsClient: fragmentsClient });
+
 
         if ("{{ search }}" == ""){
             var query = 'SELECT ?s ?p ?o WHERE {?s  ?p <http://www.w3.org/ns/dcat#' + "{{ searchOption }}" + '>. ?s ?p ?o } ',
@@ -65,7 +66,7 @@
                     console.log("Key:" + key + " | value: " + value);
                     if (key == "?s") subject = value;
                     else if (key == "?p") predicate = value;
-                    else if (key == "?o") {
+                    else if (key == "?o" &&(key.toLowerCase().indexOf("?o".toLowerCase()) > -1   || key=="")) {
                         object = value
                         var output =
                                 '<tr>' +
