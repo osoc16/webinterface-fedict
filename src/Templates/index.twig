@@ -47,16 +47,15 @@
 
         var query = 'SELECT ?s ?p ?o { ?s a <http://www.w3.org/ns/dcat#' + "{{ searchOption }}" + '> . ' +
                         '?s <http://purl.org/dc/terms/title> ?o . ' +
-                        'FILTER regex(?o,"'+ "{{ search }}" + '") .' +
+                        'FILTER (regex( ?o,"'+ "{{ search }}" + '" )) .' +
                         '?s ?p ?o' +
                         ' } LIMIT 10',
                 results = new ldf.SparqlIterator(query, { fragmentsClient: fragmentsClient });
 
         if ("{{ search }}" == ""){
-            var query = 'SELECT ?s ?p ?o WHERE {?s  ?p <http://www.w3.org/ns/dcat#' + "{{ searchOption }}" + '>. ?s ?p ?o } LIMIT 20',
+            var query = 'SELECT ?s ?p ?o WHERE {?s  ?p <http://www.w3.org/ns/dcat#' + "{{ searchOption }}" + '>. ?s ?p ?o } ',
             results = new ldf.SparqlIterator(query, { fragmentsClient: fragmentsClient });
         }
-
 
             results.on('data', function (data) {
                 var subject = "";
