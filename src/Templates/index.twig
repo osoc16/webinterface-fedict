@@ -44,27 +44,11 @@
     <script src='http://client.linkeddatafragments.org/scripts/ldf-client-jquery-packaged.js'></script>
     <script>
         var fragmentsClient = new ldf.FragmentsClient('http://185.14.185.158:5000/triplestore');
-/* catalog and dataset search query */
+
         var query = 'SELECT * { ?s a <http://www.w3.org/ns/dcat#' + "{{ searchOption }}" + '> . ' +
-                 '?s <http://purl.org/dc/terms/title> "' + "{{ search }}" + '"@en} LIMIT 10',
+                 '?s <http://purl.org/dc/terms/title> "' + "{{ search }}" + '"@en . ?s ?p ?o } LIMIT 10',
             results = new ldf.SparqlIterator(query, { fragmentsClient: fragmentsClient });
 
-
-        /* dataset search query
-         var query = 'SELECT * { ?s a <http://www.w3.org/ns/dcat#' + "{{ searchOption }}" + '> . ' +
-         '?s <http://purl.org/dc/terms/title>"' + "{{ search }}" + '"@en} LIMIT 10',
-         results = new ldf.SparqlIterator(query, { fragmentsClient: fragmentsClient });
-         */
-
-
-
-
-
-        //+        '?s <http://purl.org/dc/terms/title> <{{ search }}> ?o .
-        //<{{ search }}>
-        //var query = 'SELECT * {?s  ?p <http://www.w3.org/ns/dcat#' + "{{ searchOption }}" + '>. ?s ?p ?o } LIMIT 20',
-    //  var query = 'SELECT * {<' + "{{ search }}" + '>  ?p <http://www.w3.org/ns/dcat#' + "{{ searchOption }}" + '>. ?s ?p ?o } LIMIT 20',
-              //      results = new ldf.SparqlIterator(query, { fragmentsClient: fragmentsClient });
         if ("{{ search }}" == ""){
             var query = 'SELECT * {?s  ?p <http://www.w3.org/ns/dcat#' + "{{ searchOption }}" + '>. ?s ?p ?o } LIMIT 20',
             results = new ldf.SparqlIterator(query, { fragmentsClient: fragmentsClient });
