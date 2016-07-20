@@ -45,14 +45,19 @@
     <script>
         var fragmentsClient = new ldf.FragmentsClient('http://185.14.185.158:5000/triplestore');
 
-        var query = 'SELECT * { ?s a <http://www.w3.org/ns/dcat#' + "{{ searchOption }}" + '> . ' +
-                 '?s <http://purl.org/dc/terms/title> "' + "{{ search }}" + '"@en . ?s ?p ?o } LIMIT 10',
-            results = new ldf.SparqlIterator(query, { fragmentsClient: fragmentsClient });
+        var query = 'SELECT ?s ?p ?o { ?s a <http://www.w3.org/ns/dcat#' + "{{ searchOption }}" + '> . ' +
+                        '?s <http://purl.org/dc/terms/title> ?o . ' +
+                        'FILTER regex(?o,"'+ "{{ search }}" + '") .' +
+                        '?s ?p ?o' +
+                        ' } LIMIT 10',
+                results = new ldf.SparqlIterator(query, { fragmentsClient: fragmentsClient });
 
         if ("{{ search }}" == ""){
-            var query = 'SELECT * {?s  ?p <http://www.w3.org/ns/dcat#' + "{{ searchOption }}" + '>. ?s ?p ?o } LIMIT 20',
+            var query = 'SELECT ?s ?p ?o WHERE {?s  ?p <http://www.w3.org/ns/dcat#' + "{{ searchOption }}" + '>. ?s ?p ?o } LIMIT 20',
             results = new ldf.SparqlIterator(query, { fragmentsClient: fragmentsClient });
         }
+
+
             results.on('data', function (data) {
                 var subject = "";
                 var predicate = "";
