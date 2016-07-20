@@ -27,6 +27,9 @@
     <script>
         var fragmentsClient = new ldf.FragmentsClient('http://185.14.185.158:5000/triplestore');
         /*
+        var query = 'SEL    ECT * { ?s a <http://www.w3.org/ns/dcat#Catalog> . ' +
+                        '       <http://fsb.rovin.be> ?p ?o .'
+
         var query = 'SELECT * { ?s a <http://www.w3.org/ns/dcat#Catalog> . ' +
                         '       <...> ?p ?o .'
                             +'} LIMIT 100',
@@ -46,10 +49,13 @@
                         +'} LIMIT 100',
                 results = new ldf.SparqlIterator(query, { fragmentsClient: fragmentsClient });
 */
-        var query = 'SELECT * { <...>  ?p ?o. '
+           /* var query = 'SELECT * { <http://fsb.belgium.be/edrl/ActivityService/v1_00> ?p ?o. '
                         +'} LIMIT 100',
                 results = new ldf.SparqlIterator(query, { fragmentsClient: fragmentsClient });
-
+*/
+      var query = 'prefix dcat: http://www.w3.org/ns/dcat#        SELECT * { ?s a dcat:Catalog. } '
+                ,
+                results = new ldf.SparqlIterator(query, { fragmentsClient: fragmentsClient });
 
         results.on('data', function (data) {
            console.log(data)
