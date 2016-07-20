@@ -9,12 +9,13 @@
     </a>
 
     <div class="description"></div>
-    <h2>Services</h2>
+    <h2>Details</h2>
     <div class="tbl-header">
         <table cellpadding="0" cellspacing="0" border="0">
             <thead>
             <tr>
                 <th>Name</th>
+                <th>Data</th>
             </tr>
             </thead>
         </table>
@@ -28,31 +29,49 @@
     <script src='http://client.linkeddatafragments.org/scripts/ldf-client-jquery-packaged.js'></script>
     <script>
         var fragmentsClient = new ldf.FragmentsClient('http://185.14.185.158:5000/triplestore');
-        // var queryDescription = 'SELECT * {<'+ "{{ subject }}" + '>  <http://purl.org/dc/terms/description> ?o. ?s ?p ?o } LIMIT 5',
-         var queryDescription = 'SELECT * {<'+ "{{ subject }}" + '>  ?p ?o} LIMIT 100',
-
-        //var queryDescription = 'SELECT * {<'+ "{{ subject }}" + '>  <http://purl.org/dc/terms/description> ?o. ?s ?p ?o } LIMIT 5',
+        var queryDescription = 'SELECT * {<'+ "{{ subject }}" + '>  ?p ?o} LIMIT 100',
                 results = new ldf.SparqlIterator(queryDescription, { fragmentsClient: fragmentsClient });
         results.on('data', function (data) {
-            console.log(data);
+            //console.log(data);
             var predicate = "";
+            var objData = "";
+            var output = "";
             $.each(data, function(key, value) {
                 if (key == "?p") predicate = value;
-                else if (key == "?o"){
-                    if(value.indexOf("http") !=-1){
-                        $(".description").append('<p>' + predicate.substr((predicate.lastIndexOf('/') + 1)) + ' - '
-                                + '<b>'
-                                + '<a target="_blank" href=' + value + '>' + value.substr((value.lastIndexOf('/') + 1)) + '</a>'
-                                + '</b></p>');
-                    } else{
-                    $(".description").append('<p>' + predicate.substr((predicate.lastIndexOf('/') + 1)) + ' - '
-                            + '<b>'
-                            + value
-                            + '</b></p>');
+                else if (key == "?o") objData = value;
+
+                if (predicate.length > 1 && objData.length > 1){
+                    console.log("Predicate length: " + predicate.length + " Object length: " + objData.length);
+                    console.log("Predicate: " + predicate + " Object: " + objData);
+
+                    if(objData.indexOf('http') !=-1){
+                        output =
+                                '<tr>' +
+                                '<td>' + predicate.substr((predicate.lastIndexOf('/') + 1)) + '</td>' +
+                                '<td>' + objData.substr((objData.lastIndexOf('/') + 1)) + '</td>' +
+                                '</tr>';
+                        $("tbody").append(output);
+                        console.log("Object VALUE: " + objData);
+                        $('tr').click(function() {
+                            window.open(objData, '_blank');
+                        });
+                    } else {
+                        output =
+                                '<tr>' +
+                                '<td>' + predicate.substr((predicate.lastIndexOf('/') + 1)) + '</td>' +
+                                '<td>' + objData + '</td>' +
+                                '</tr>';
+                        $("tbody").append(output);
+                        $('tr').click(function() {
+                            window.open("none", '_blank');
+                        });
                     }
+                    predicate = "";
+                    object = "";
                 }
             });
         });
+        /*
         var queryMethods = 'SELECT * { ?s  <http://www.w3.org/ns/dcat#distribution> ?o. ?s ?p ?o  } LIMIT 100',
                 results = new ldf.SparqlIterator(queryMethods, { fragmentsClient: fragmentsClient });
         results.on('data', function (data) {
@@ -70,5 +89,6 @@
                 }
             });
         });
+         */
     </script>
 {% endblock %}
