@@ -4,7 +4,7 @@
 
 {% block pageContent %}
     <form action="index.php" method="post">
-        <select name="searchOption">
+        <select name="searchOption" onchange="this.form.submit()">
             {% if searchOption == 'Catalog' %}
                 <option value="Catalog" selected>Catalog</option>
             {% else %}
