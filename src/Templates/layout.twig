@@ -49,14 +49,14 @@
                         +'} LIMIT 100',
                 results = new ldf.SparqlIterator(query, { fragmentsClient: fragmentsClient });
 */
-       /* var query = 'SELECT * { <http://fsb.belgium.be/edrl/ActivityService/v1_00> ?p ?o. '
+           /* var query = 'SELECT * { <http://fsb.belgium.be/edrl/ActivityService/v1_00> ?p ?o. '
                         +'} LIMIT 100',
                 results = new ldf.SparqlIterator(query, { fragmentsClient: fragmentsClient });
 */
-  /*      var query = 'SELECT ?s ?p ?o  WHERE { ?s ?p ?o .FILTER regex(?s, \"aaaaaaa\") .}'
+      var query = 'prefix dcat: http://www.w3.org/ns/dcat#        SELECT * { ?s a dcat:Catalog. } '
                 ,
                 results = new ldf.SparqlIterator(query, { fragmentsClient: fragmentsClient });
-        */
+
         results.on('data', function (data) {
            console.log(data)
         });
