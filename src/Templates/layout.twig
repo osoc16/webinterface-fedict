@@ -8,11 +8,12 @@
     <link rel="stylesheet" href="../dist/css/style.css" />
 </head>
 <body>
-    <a href="index.php"><h1>Fedict-webinterface</h1></a>
     <div class="nav">
+        <a href="index.php"><h1>Fedict-webinterface</h1></a>
+
         <ul>
             <li><a href="index.php">Home</a></li>
-            <li><a href="#">About</a></li>
+            <li><a href="about.php">About</a></li>
         </ul>
     </div>
         <div class="pagecontent">
@@ -20,46 +21,9 @@
             {% endblock %}
         </div>
         <div class="footer">
-            </br>Copyright (c) 2016 Open Knowledge Belgium - Fedict
+            </br>Copyright (c) 2016 <a href="http://www.openknowledge.be/" target="_blank">Open Knowledge Belgium</a> - <a href="http://www.fedict.belgium.be/en" target="_blank">Fedict</a>
         </div>
 
     <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
-    <script>
-        var fragmentsClient = new ldf.FragmentsClient('http://185.14.185.158:5000/triplestore');
-        /*
-        var query = 'SEL    ECT * { ?s a <http://www.w3.org/ns/dcat#Catalog> . ' +
-                        '       <http://fsb.rovin.be> ?p ?o .'
-
-        var query = 'SELECT * { ?s a <http://www.w3.org/ns/dcat#Catalog> . ' +
-                        '       <...> ?p ?o .'
-                            +'} LIMIT 100',
-                results = new ldf.SparqlIterator(query, { fragmentsClient: fragmentsClient });
-        */
-
-      /*  var query = 'SELECT * { ?s <http://www.w3.org/ns/dcat#dataset> ?o. ' +
-                                '<...>  ?p ?o .'
-
-                        +'} LIMIT 100',
-                results = new ldf.SparqlIterator(query, { fragmentsClient: fragmentsClient });
-    */
-
-/*        var query = 'SELECT * { ?s <http://www.w3.org/ns/dcat#distribution> ?o. ' +
-                        '<...>  ?p ?o .'
-
-                        +'} LIMIT 100',
-                results = new ldf.SparqlIterator(query, { fragmentsClient: fragmentsClient });
-*/
-           /* var query = 'SELECT * { <http://fsb.belgium.be/edrl/ActivityService/v1_00> ?p ?o. '
-                        +'} LIMIT 100',
-                results = new ldf.SparqlIterator(query, { fragmentsClient: fragmentsClient });
-*/
-      var query = 'prefix dcat: http://www.w3.org/ns/dcat#        SELECT * { ?s a dcat:Catalog. } '
-                ,
-                results = new ldf.SparqlIterator(query, { fragmentsClient: fragmentsClient });
-
-        results.on('data', function (data) {
-           console.log(data)
-        });
-    </script>
 </body>
 </html>
