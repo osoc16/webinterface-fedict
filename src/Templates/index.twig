@@ -47,7 +47,7 @@
 
         var query = 'SELECT ?s ?p ?o { ?s a <http://www.w3.org/ns/dcat#' + "{{ searchOption }}" + '> . ' +
                         '?s <http://purl.org/dc/terms/title> ?o . ' +
-                        /*'FILTER (regex( ?o,"'+ "{{ search }}" + '" )) .' + */
+                  //      'FILTER (regex( ?o,"'+ "{{ search }}" + '" )) .' +
                         '?s ?p ?o' +
                         ' } ',
                 results = new ldf.SparqlIterator(query, { fragmentsClient: fragmentsClient });
@@ -57,16 +57,21 @@
             var query = 'SELECT ?s ?p ?o WHERE {?s  ?p <http://www.w3.org/ns/dcat#' + "{{ searchOption }}" + '>. ?s ?p ?o } ',
             results = new ldf.SparqlIterator(query, { fragmentsClient: fragmentsClient });
         }
+        //             else if (key == "?o" &&(value.toLowerCase().indexOf("{{ search }}".toLowerCase()) > -1   || value == "")) {
 
-            results.on('data', function (data) {
+
+        var searchOption = "{{ search }}";
+            results.on('data', function (data ) {
                 var subject = "";
                 var predicate = "";
                 var object = "";
+
                 $.each(data, function(key, value) {
-                    console.log("Key:" + key + " | value: " + value);
+                  // console.log("Key:" + key + " | value: " + value);
                     if (key == "?s") subject = value;
                     else if (key == "?p") predicate = value;
-                    else if (key == "?o" &&(key.toLowerCase().indexOf("?o".toLowerCase()) > -1   || key=="")) {
+                      else if (key == "?o" && (value.toLowerCase().indexOf(searchOption.toLowerCase()) > -1 || searchOption == "")  ) {
+
                         object = value
                         var output =
                                 '<tr>' +
