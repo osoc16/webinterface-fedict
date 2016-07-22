@@ -4,7 +4,7 @@
 
 {% block pageContent %}
     <form id="searchForm" action="index.php" method="post">
-        <select name="searchOption" onchange="this.form.submit()">
+        <select id="searchOption" name="searchOption" onchange="this.form.submit()">
             {% if searchOption == 'Catalog' %}
                 <option value="Catalog" selected>Catalog</option>
             {% else %}
@@ -23,6 +23,8 @@
         </select>
         <input name="search" id="search" class="search" type="text" placeholder="Search" value="{{ search }}"/>
     </form>
+    <input id="questionButton" type="image" src="../dist/images/question.png" width="40em"/>
+
     <script src='http://client.linkeddatafragments.org/scripts/ldf-client-jquery-packaged.js'></script>
     <script>
         function init() {
@@ -33,17 +35,13 @@
             }
         }
         $(document).ready(init);
-        //window.onload = init; //or $(document).ready(init); - for jQuery
-
         function lookup(key_count) {
             if(key_count == key_count_global) { // The control will reach this point 1 second after user stops typing.
                 // Do the ajax lookup here.
-                //document.getElementById("status_stop").innerHTML = " ... lookup result ...";
                 $('form#searchForm').submit();
             }
         }
     </script>
-
 
     <div class="tbl-header">
         <table cellpadding="0" cellspacing="0" border="0">
@@ -109,9 +107,65 @@
 
                 });
         });
-
     </script>
     </tbody>
     </table>
     </div>
+
+
+    <ol id="joyRideTipContent">
+        <li data-id="" data-button="Start"
+            data-options="tipLocation:center;tipAnimation:fade">
+            <h2>Welcome!</h2>
+            <p>Press Start to begin the guide.</p>
+        </li>
+
+        <li data-id="searchOption" data-button="Next"
+            data-options="tipLocation:top;tipAnimation:fade">
+            <h2>Search categories</h2>
+            <p>There are 3 categories:</p>
+            <ul>
+                <li>Catalog</li>
+                <li>Dataset</li>
+                <li>Distribution</li>
+            </ul>
+        </li>
+
+        <li data-id="searchOption" data-button="Next"
+            data-options="tipLocation:top;tipAnimation:fade">
+            <h2>Catalog</h2>
+            <p>Lorem ipsum</p>
+        </li>
+
+        <li data-id="searchOption" data-button="Next"
+            data-options="tipLocation:top;tipAnimation:fade">
+            <h2>Dataset</h2>
+            <p>Lorem ipsum</p>
+        </li>
+
+        <li data-id="searchOption" data-button="Next"
+            data-options="tipLocation:top;tipAnimation:fade">
+            <h2>Distribution</h2>
+            <p>Lorem ipsum</p>
+        </li>
+
+        <li data-id="" data-button="Thank you :)"
+            data-options="tipLocation:center">
+            <h3>We hope everything is now clear.</h3>
+        </li>
+
+    </ol>
+
+    <script>
+        $(window).load(function() {
+            $("#joyRideTipContent").joyride({
+                modal: true,
+                expose: true
+            });
+        });
+        $("#questionButton").click(function() {
+            $("#joyRideTipContent").joyride({autoStart: true});
+        });
+    </script>
+
 {% endblock %}
