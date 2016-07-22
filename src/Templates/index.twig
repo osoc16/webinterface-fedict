@@ -3,6 +3,7 @@
 {% set pageTitle = 'Fedict - Webinterface' %}
 
 {% block pageContent %}
+    <input id="questionButton" type="image" src="../dist/images/question.png"/>
     <form id="searchForm" action="index.php" method="post">
         <select id="searchOption" name="searchOption" onchange="this.form.submit()">
             {% if searchOption == 'Catalog' %}
@@ -23,7 +24,6 @@
         </select>
         <input name="search" id="search" class="search" type="text" placeholder="Search" value="{{ search }}"/>
     </form>
-    <input id="questionButton" type="image" src="../dist/images/question.png" width="40em"/>
 
     <script src='http://client.linkeddatafragments.org/scripts/ldf-client-jquery-packaged.js'></script>
     <script>

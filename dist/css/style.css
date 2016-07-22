@@ -17,6 +17,11 @@ h2,h3 {
     margin: 0 1em;
 }
 
+#questionButton{
+    width:2.5em;
+    float: right;
+}
+
 a {
     text-decoration: underline;
 }
