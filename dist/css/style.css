@@ -66,6 +66,14 @@ input[type=text], select {
     color: white;
 }
 
+.search {
+    background-image: url('../images/search.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+    text-indent:2em;
+}
+
+
 option {
     background:#00868c;
     color: white;
@@ -88,7 +96,7 @@ input[type=submit] {
 
 input[type=submit]:hover {background-color: #45a049;}
 
-::-webkit-input-placeholder {rgb(199, 228, 230)}
+::-webkit-input-placeholder {color: rgb(199, 228, 230)}
 :-moz-placeholder {color: rgb(199, 228, 230)}
 ::-moz-placeholder {color: rgb(199, 228, 230)}
 :-ms-input-placeholder {color: rgb(199, 228, 230)}
@@ -128,7 +136,7 @@ td{
     text-align: left;
     vertical-align:middle;
     font-weight: 300;
-    font-size: 12px;
+    font-size: 1em;
     overflow-wrap: break-word;
     color: #fff;
     border-bottom: solid 1px rgb(140, 169, 171);
