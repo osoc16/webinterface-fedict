@@ -21,14 +21,13 @@
                 <option value="Distribution">Distribution</option>
             {% endif %}
         </select>
-        <input name="search" class="search" type="text" placeholder="Search" value="{{ search }}"/>
+        <input name="search" id="search" class="search" type="text" placeholder="Search" value="{{ search }}"/>
     </form>
-
+    <script src='http://client.linkeddatafragments.org/scripts/ldf-client-jquery-packaged.js'></script>
     <script>
         function init() {
             key_count_global = 0; // Global variable
-            $("search").onkeypress = function() {
-                alert("clicked");
+            document.getElementById("search").onkeypress = function() {
                 key_count_global++;
                 setTimeout("lookup("+key_count_global+")", 300);
             }
@@ -63,7 +62,6 @@
     <div id="loading">
         <img id="loading-image" src="images/ajax-loader.gif" alt="Loading..." />
     </div>
-    <script src='http://client.linkeddatafragments.org/scripts/ldf-client-jquery-packaged.js'></script>
     <script>
         var fragmentsClient = new ldf.FragmentsClient('http://185.14.185.158:5000/triplestore');
 
