@@ -1,11 +1,12 @@
 
 
 h1{
-    font-size: 1.4em;
+    font-size: 1.6em;
     color: #fff;
     text-transform: uppercase;
     font-weight: 300;
     letter-spacing: 1px;
+    float: left;
 }
 h2,h3 {
     color:  #444;
@@ -22,6 +23,11 @@ a {
 
 .nav {
     padding:0 0 1em 0;
+}
+
+.nav img {
+    width: 4em;
+    float: left;
 }
 
 .nav ul {
