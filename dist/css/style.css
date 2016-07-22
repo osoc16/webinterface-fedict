@@ -1,7 +1,4 @@
-*{
-    color:  #444;
-;
-}
+
 
 h1{
     font-size: 1.4em;
@@ -11,6 +8,7 @@ h1{
     letter-spacing: 1px;
 }
 h2,h3 {
+    color:  #444;
     padding: 1em 0em;
 }
 
