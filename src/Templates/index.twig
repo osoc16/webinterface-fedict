@@ -80,11 +80,8 @@
                 var subject = "";
                 var predicate = "";
                 var object = "";
-
                 $('#loading').show();
-
                 $.each(data, function(key, value) {
-                   console.log("Key:" + key + " | value: " + value);
                     if (key == "?s") subject = value;
                     else if (key == "?p") predicate = value;
                       else if (key == "?o" && (value.toLowerCase().indexOf(searchOption.toLowerCase()) > -1 || searchOption == "")  ) {
@@ -95,18 +92,18 @@
                                 '<td>'+ predicate + '</td>' +
                                 '<td>'+ object +'</td>' +
                                 '</tr>';
-                        console.log("Subject: " + subject + " - Predicate: " + predicate + " - Object: " + object);
                         $("tbody").append(output);
                         $('#loading').hide();
-                        $('tr.tableContent').click(function() {
-                            $url = $(this).attr('data-url');
-                            window.open('webservice.php?subject='  + $url, '_blank');
-                            //document.location = 'webservice.php?subject=' + subject;
-                        });
+
                     }else {
                         $('#loading').hide();
                     }
 
+                });
+                $('tr.tableContent').click(function() {
+                    $url = $(this).attr('data-url');
+                    window.open('webservice.php?subject='  + $url, '_blank');
+                    //document.location = 'webservice.php?subject=' + subject;
                 });
         });
     </script>

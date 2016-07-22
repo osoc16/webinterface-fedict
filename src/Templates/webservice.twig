@@ -41,34 +41,28 @@
                 else if (key == "?o") objData = value;
 
                 if (predicate.length > 1 && objData.length > 1){
-                    console.log("Predicate length: " + predicate.length + " Object length: " + objData.length);
-                    console.log("Predicate: " + predicate + " Object: " + objData);
 
                     if(objData.indexOf('http') !=-1){
                         output =
-                                '<tr class="tableContent">' +
+                                '<tr class="tableContent" data-url="'+ objData + '">' +
                                 '<td>' + predicate.substr((predicate.lastIndexOf('/') + 1)) + '</td>' +
                                 '<td>' + objData.substr((objData.lastIndexOf('/') + 1)) + '</td>' +
                                 '</tr>';
-                        $("tbody").append(output);
-                        console.log("Object VALUE: " + objData);
-                        $('tr.tableContent').click(function() {
-                            window.open(objData, '_blank');
-                        });
+                        //$("tbody").append(output);
                     } else {
                         output =
-                                '<tr class="tableContent">' +
+                                '<tr>' +
                                 '<td>' + predicate.substr((predicate.lastIndexOf('/') + 1)) + '</td>' +
                                 '<td>' + objData + '</td>' +
                                 '</tr>';
-                        $("tbody").append(output);
-                        $('tr.tableContent').click(function() {
-                            window.open("none", '_blank');
-                        });
                     }
+                    $("tbody").append(output);
                     predicate = "";
-                    object = "";
                 }
+            });
+            $('tr.tableContent').click(function() {
+                var url = $(this).attr('data-url');
+                window.open(url, '_blank');
             });
         });
         /*
