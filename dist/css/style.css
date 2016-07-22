@@ -103,15 +103,17 @@ table{
     table-layout: fixed;
     background: rgba(0, 134, 140, 0.22);
 }
+
 .tbl-header{
     background-color:#444
 }
 .tbl-content{
-    height:300px;
+    height:30em;
     overflow-x:auto;
     margin-top: 0px;
     border-top: 3px solid rgb(140, 169, 171);
     background: #444;
+    margin-bottom: 5em;
 }
 th{
     padding: 20px 15px;
