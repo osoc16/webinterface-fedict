@@ -90,7 +90,7 @@
                       else if (key == "?o" && (value.toLowerCase().indexOf(searchOption.toLowerCase()) > -1 || searchOption == "")  ) {
                         object = value
                         var output =
-                                '<tr>' +
+                                '<tr class="tableContent" data-url="'+ subject + '">' +
                                 '<td>'+ subject +'</td>' +
                                 '<td>'+ predicate + '</td>' +
                                 '<td>'+ object +'</td>' +
@@ -98,8 +98,10 @@
                         console.log("Subject: " + subject + " - Predicate: " + predicate + " - Object: " + object);
                         $("tbody").append(output);
                         $('#loading').hide();
-                        $('tr').click(function() {
-                            document.location = 'webservice.php?subject=' + subject;
+                        $('tr.tableContent').click(function() {
+                            $url = $(this).attr('data-url');
+                            window.open('webservice.php?subject='  + $url, '_blank');
+                            //document.location = 'webservice.php?subject=' + subject;
                         });
                     }else {
                         $('#loading').hide();

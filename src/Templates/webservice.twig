@@ -46,23 +46,23 @@
 
                     if(objData.indexOf('http') !=-1){
                         output =
-                                '<tr>' +
+                                '<tr class="tableContent">' +
                                 '<td>' + predicate.substr((predicate.lastIndexOf('/') + 1)) + '</td>' +
                                 '<td>' + objData.substr((objData.lastIndexOf('/') + 1)) + '</td>' +
                                 '</tr>';
                         $("tbody").append(output);
                         console.log("Object VALUE: " + objData);
-                        $('tr').click(function() {
+                        $('tr.tableContent').click(function() {
                             window.open(objData, '_blank');
                         });
                     } else {
                         output =
-                                '<tr>' +
+                                '<tr class="tableContent">' +
                                 '<td>' + predicate.substr((predicate.lastIndexOf('/') + 1)) + '</td>' +
                                 '<td>' + objData + '</td>' +
                                 '</tr>';
                         $("tbody").append(output);
-                        $('tr').click(function() {
+                        $('tr.tableContent').click(function() {
                             window.open("none", '_blank');
                         });
                     }
