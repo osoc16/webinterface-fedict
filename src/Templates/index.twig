@@ -3,7 +3,7 @@
 {% set pageTitle = 'Fedict - Webinterface' %}
 
 {% block pageContent %}
-    <form action="index.php" method="post">
+    <form id="searchForm" action="index.php" method="post">
         <select name="searchOption" onchange="this.form.submit()">
             {% if searchOption == 'Catalog' %}
                 <option value="Catalog" selected>Catalog</option>
@@ -21,9 +21,29 @@
                 <option value="Distribution">Distribution</option>
             {% endif %}
         </select>
-        <input name="search" class="search" type="text" placeholder="Enter search term" value="{{ search }}"/>
-        <input type="submit" value="Search">
+        <input name="search" class="search" type="text" placeholder="Search" value="{{ search }}"/>
     </form>
+
+    <script>
+        function init() {
+            key_count_global = 0; // Global variable
+            $("search").onkeypress = function() {
+                alert("clicked");
+                key_count_global++;
+                setTimeout("lookup("+key_count_global+")", 300);
+            }
+        }
+        $(document).ready(init);
+        //window.onload = init; //or $(document).ready(init); - for jQuery
+
+        function lookup(key_count) {
+            if(key_count == key_count_global) { // The control will reach this point 1 second after user stops typing.
+                // Do the ajax lookup here.
+                //document.getElementById("status_stop").innerHTML = " ... lookup result ...";
+                $('form#searchForm').submit();
+            }
+        }
+    </script>
 
 
     <div class="tbl-header">
