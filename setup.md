@@ -1,6 +1,13 @@
-# Welcome to the setup file of the webinterface-fedict project!
+# Welcome to the setup file of webinterface-fedict!
 
+## Pre-requirements
 
+The following software should be installed: 
+* [Node.js (NPM)](https://nodejs.org/en/)
+* [Composer](https://www.npmjs.com/package/composer) which can be installed after NPM has been installed
+inside a CMD/Terminal run: ``npm install composer`` .
+* [PHP 7.0](http://php.net/)
+* For development: [XAMPP](https://www.apachefriends.org/index.html) / [WAMPP](http://www.wampserver.com/en/) or any other web development environment.
 
 ## Install commands
 * sudo apt-get install nodejs
@@ -35,3 +42,11 @@ We have one concatenated DCAT file in turtle syntax.
 The important changes we've made in the config.json are the type and settings of the datasource.  
 
 More information on: https://www.npmjs.com/package/ldf-server.
+
+# Configure the ldf-client
+
+Don't forget to change the reference to our ldf-server to yours inside the index.twig.   
+`var fragmentsClient = new ldf.FragmentsClient('http://185.14.185.158:5000/triplestore');`   
+Should become: `var fragmentsClient = new ldf.FragmentsClient('http://**yourldfservershomepage**');`
+
+
