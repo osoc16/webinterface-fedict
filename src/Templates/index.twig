@@ -3,7 +3,7 @@
 {% set pageTitle = 'Fedict - Webinterface' %}
 
 {% block pageContent %}
-    <input id="questionButton" type="image" src="../dist/images/question.png"/>
+    <input id="questionButton" type="image" src="/images/question.png"/>
     <form id="searchForm" action="index.php" method="post">
         <select id="searchOption" name="searchOption" onchange="this.form.submit()">
             {% if searchOption == 'Catalog' %}
@@ -122,6 +122,7 @@
                 <li>Dataset</li>
                 <li>Distribution</li>
             </ul>
+
         </li>
 
         <li data-id="searchOption" data-button="Next"
@@ -135,9 +136,9 @@
         <li data-id="searchOption" data-button="Next"
             data-options="tipLocation:top;tipAnimation:fade">
             <h2>Dataset</h2>
-            <p>Data that is related to service families and service.</p>
+            <p>Data that is related to services or their families.</p>
             <p>For example: <a href="http://fsb.rovin.be/family/S216-eInvoiceServices">http://fsb.rovin.be/family/S216-eInvoiceServices</a></p>
-            <p>This specific dataset consists from 2 distributions (mini-datasets):
+            <p>This specific dataset consists of 2 distributions:
                 <a href="http://fsb.rovin.be/service/S218-SupplierService">S218-SupplierService</a> &
                 <a href="http://fsb.rovin.be/service/S217-CustomerService">S217-CustomerService</a>
             </p>
@@ -146,7 +147,28 @@
         <li data-id="searchOption" data-button="Next"
             data-options="tipLocation:top;tipAnimation:fade">
             <h2>Distribution</h2>
-            <p>Data that is related to service methods and services.</p>
+            <p>Data that is related to services or their methods.</p>
+        </li>
+
+        <li data-id="searchOption" data-button="Next"
+            data-options="tipLocation:top;tipAnimation:fade">
+            <ul> <li style="display: inline;"  >
+                <ul>
+                    <li>Catalog: documentatie webservices Fedict</li>
+                    <li>Dataset: service families</li>
+                    <li>Distribution: services</li>
+                </ul>
+                </li>
+                <li style="display: inline;">
+                    <ul>
+                        <li>Catalog: documentatie webservices Fedict</li>
+                        <li>Dataset: servicess</li>
+                        <li>Distribution: service methods</li>
+                    </ul>
+
+
+                </li>
+            </ul>
         </li>
 
         <li data-id="search" data-button="Next"
@@ -157,9 +179,9 @@
 
         </li>
 
-        <li data-id="" data-button="Thank you :)"
+        <li data-id="" data-button="Thank you for your time"
             data-options="tipLocation:center">
-            <h3>We hope everything is clear now.</h3>
+            <h3>We hope the guide helped you.</h3>
         </li>
 
     </ol>
