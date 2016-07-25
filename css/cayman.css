@@ -66,6 +66,7 @@ a {
 
 .project-name {
   margin-top: 0;
+ background: rgba(21, 116, 123, 0.6);
   margin-bottom: 0.1rem; }
   @media screen and (min-width: 64em) {
     .project-name {

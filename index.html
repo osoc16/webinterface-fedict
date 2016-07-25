@@ -4,11 +4,44 @@ title: {{ site.name }}
 ---
 
 <div id="home">
-  <h1>Introduction</h1>
-  <p>This webinterface is easy to use tool for users that would like to search and inspect datasets.
+  <h2>Introduction</h2>
+  <p>This web-interface is easy to use tool for users that would like to search and inspect datasets.
   It utilises <a href="https://github.com/LinkedDataFragments/Client.js" target="_blank">LDF Client</a> and
     <a href="https://github.com/LinkedDataFragments/Server.js" target="_blank">LDF Server</a> behind the scenes.
     And it's designed to be compatible with all browsers and mobile devices.
   </p>
+
+  <h2>Web-interface</h2>
+  <p>The UI consists from a
+    <span style="color: #a349a4;">search</span>,
+    <span style="color: #22b14c;">guide </span> and a
+    <span style="color: #ed1c24;"> table showing the datasets</span>.</p>
+  <img src="images/webinterfaceMain.PNG" alt="webinterface main" style="max-width:100%;max-height:100%;">
+
+  <h3 style="color: #a349a4;">Search</h3>
+  <p>DCAT describes datasets on 3 different levels. The Catalog,
+  the Dataset and the Distribution level. Each level contains information, meta-data, about itself, such as the title, description, and so on. Furthermore, the upper layers contains URI references to its children,
+  which means it’s easy to cross-reference all of the data.</p>
+  <b>The Catalog</b>
+  <p>The Catalog is the upper level in the DCAT standard.
+    It contains a description of itself, such as the title, description, publisher
+    and licenses. It also contains references to the different Datasets
+    which can be found within this particular Data Catalog.</p>
+  <b>The Dataset</b>
+  <p>The Dataset contains information about the individual Dataset,
+    such as the author, which category the dataset belongs to,
+    geographical information, and so on.
+    It also has references to all the different Distribution methods of this particular dataset.</p>
+  <b>The Distribution</b>
+  <p>This is the deepest level of the DCAT standard.
+    At this level we define the access URL for the data, type (CSV, JSON, …),
+    license, size, download URL, and so on.</p>
+
+  <h3 style="color: #22b14c;">Guide</h3>
+  <p>Explains in (a nice way) details about the web-interface.</p>
+  <img src="images/webinterfaceGuide.PNG" alt="webinterface guide" style="max-width:100%;max-height:100%;">
+
+  <h3 style="color: #ed1c24;">Table of datesets</h3>
+  <p>Datasets are displayed here.</p>
 
 </div>

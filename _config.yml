@@ -1,6 +1,6 @@
 # Setup
-title:        Welcome to GitHub page
-tagline:      Webinterface for browsing datasets
+title:        DCAT Web-interface
+tagline:      Web-interface for browsing datasets
 #baseurl:      ""
 baseurl:      "/webinterface-fedict"
 
@@ -8,8 +8,8 @@ paginate:     1
 
 # About/contact
 author:
-  name:       Author name
-  url:        http://yourhomepage.com 
+  name:       oSoc16
+  url:        http://2016.summerofcode.be/
 
 
 gems: [jekyll-paginate]
