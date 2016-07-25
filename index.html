@@ -4,10 +4,11 @@ title: {{ site.name }}
 ---
 
 <div id="home">
-  <h1>Blog Posts</h1>
-  <ul class="posts">
-    {% for post in site.posts %}
-      <li><span>{{ post.date | date_to_string }}</span> &raquo; <a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></li>
-    {% endfor %}
-  </ul>
-</div>l
+  <h1>Introduction</h1>
+  <p>This webinterface is easy to use tool for users that would like to search and inspect datasets.
+  It utilises <a href="https://github.com/LinkedDataFragments/Client.js" target="_blank">LDF Client</a> and
+    <a href="https://github.com/LinkedDataFragments/Server.js" target="_blank">LDF Server</a> behind the scenes.
+    And it's designed to be compatible with all browsers and mobile devices.
+  </p>
+
+</div>

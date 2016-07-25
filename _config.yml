@@ -1,7 +1,9 @@
 # Setup
 title:        Welcome to GitHub page
-tagline:      Tool for converting to DCAT and webinterface
+tagline:      Webinterface for browsing datasets
+#baseurl:      ""
 baseurl:      "/webinterface-fedict"
+
 paginate:     1
 
 # About/contact
