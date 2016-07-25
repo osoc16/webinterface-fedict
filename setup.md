@@ -45,10 +45,17 @@ More information on: https://www.npmjs.com/package/ldf-server.
 
 ## Start the server
 
+### Manually
 After creating a configuration file, execute ``ldf-server config.json 5000 4 ``
 Here, 5000 is the HTTP port on which the server will listen, and 4 the number of worker processes.
 
 Now visit http://localhost:5000/ in your browser.
+### init.d script
+Another possibility is an /etc/init.d script. This script will start the ldf-server when the server has been rebooted. 
+I got the idea from this repo [https://github.com/chovy/node-startup](https://github.com/chovy/node-startup).
+This is how our script looks like. 
+
+
 
 # Configure the ldf-client
 
