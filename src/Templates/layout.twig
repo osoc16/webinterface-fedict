@@ -4,16 +4,17 @@
     <title>{{ pageTitle }}</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <link rel="stylesheet" href="../dist/css/generic.css" />
+    <link rel="stylesheet" href="../dist/css/normalize.css" />
     <link rel="stylesheet" href="../dist/css/style.css" />
+    <link rel="stylesheet" href="../dist/css/joyride-2.1.css">
+
 </head>
 <body>
     <div class="nav">
-        <a href="index.php"><h1>Fedict-webinterface</h1></a>
-
         <ul>
-            <li><a href="index.php">Home</a></li>
-            <li><a href="about.php">About</a></li>
+            <li>
+                <a href="index.php"><img src="../dist/images/logo.png" alt="Fedict-Webinterface logo"><h1>Fedict-webinterface</h1></a>
+            </li>
         </ul>
     </div>
         <div class="pagecontent">
@@ -21,9 +22,11 @@
             {% endblock %}
         </div>
         <div class="footer">
-            </br>Copyright (c) 2016 <a href="http://www.openknowledge.be/" target="_blank">Open Knowledge Belgium</a> - <a href="http://www.fedict.belgium.be/en" target="_blank">Fedict</a>
+            </br>Copyright (c) 2016 <a href="http://www.openknowledge.be/" target="_blank">Open Knowledge Belgium</a>
+            - <a href="http://www.fedict.belgium.be/en" target="_blank">Fedict</a>
+            - <a href="https://github.com/osoc16/webinterface-fedict" target="_blank">GitHub repo</a>
         </div>
-
     <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+    <script src="../dist/scripts/js/jquery.joyride-2.1.js"></script>
 </body>
 </html>

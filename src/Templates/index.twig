@@ -3,8 +3,9 @@
 {% set pageTitle = 'Fedict - Webinterface' %}
 
 {% block pageContent %}
-    <form action="index.php" method="post">
-        <select name="searchOption" onchange="this.form.submit()">
+    <input id="questionButton" type="image" src="../dist/images/question.png"/>
+    <form id="searchForm" action="index.php" method="post">
+        <select id="searchOption" name="searchOption" onchange="this.form.submit()">
             {% if searchOption == 'Catalog' %}
                 <option value="Catalog" selected>Catalog</option>
             {% else %}
@@ -21,10 +22,26 @@
                 <option value="Distribution">Distribution</option>
             {% endif %}
         </select>
-        <input name="search" type="text" placeholder="Enter search term" value="{{ search }}"/>
-        <input type="submit" value="Search">
+        <input name="search" id="search" class="search" type="text" placeholder="Search" value="{{ search }}"/>
     </form>
 
+    <script src='http://client.linkeddatafragments.org/scripts/ldf-client-jquery-packaged.js'></script>
+    <script>
+        function init() {
+            key_count_global = 0; // Global variable
+            document.getElementById("search").onkeypress = function() {
+                key_count_global++;
+                setTimeout("lookup("+key_count_global+")", 300);
+            }
+        }
+        $(document).ready(init);
+        function lookup(key_count) {
+            if(key_count == key_count_global) { // The control will reach this point 1 second after user stops typing.
+                // Do the ajax lookup here.
+                $('form#searchForm').submit();
+            }
+        }
+    </script>
 
     <div class="tbl-header">
         <table cellpadding="0" cellspacing="0" border="0">
@@ -40,11 +57,9 @@
     <div  class="tbl-content">
     <table cellpadding="0" cellspacing="0" border="0">
     <tbody>
-    <div id="load>
+    <div id="loading">
         <img id="loading-image" src="images/ajax-loader.gif" alt="Loading..." />
     </div>
-
-    <script src='http://client.linkeddatafragments.org/scripts/ldf-client-jquery-packaged.js'></script>
     <script>
         var fragmentsClient = new ldf.FragmentsClient('http://185.14.185.158:5000/triplestore');
 
@@ -65,40 +80,106 @@
                 var subject = "";
                 var predicate = "";
                 var object = "";
-                console.log("herstart")
                 $('#loading').show();
-
                 $.each(data, function(key, value) {
-                 //  console.log("Key:" + key + " | value: " + value);
                     if (key == "?s") subject = value;
                     else if (key == "?p") predicate = value;
                       else if (key == "?o" && (value.toLowerCase().indexOf(searchOption.toLowerCase()) > -1 || searchOption == "")  ) {
                         object = value
                         var output =
-                                '<tr>' +
+                                '<tr class="tableContent" data-url="'+ subject + '">' +
                                 '<td>'+ subject +'</td>' +
                                 '<td>'+ predicate + '</td>' +
                                 '<td>'+ object +'</td>' +
                                 '</tr>';
-                        console.log("Subject: " + subject + " - Predicate: " + predicate + " - Object: " + object);
                         $("tbody").append(output);
-                        $('tr').click(function() {
-                            document.location = 'webservice.php?subject=' + subject;
-                        });
+                        $('#loading').hide();
+
+                    }else {
+                        $('#loading').hide();
                     }
 
                 });
-
-                console.log(data)
-
+                $('tr.tableContent').click(function() {
+                    $url = $(this).attr('data-url');
+                    window.open('webservice.php?subject='  + $url, '_self');
+                    //document.location = 'webservice.php?subject=' + subject;
+                });
         });
-
     </script>
     </tbody>
     </table>
     </div>
 
-    <h2>URL Parameters</h2>
-    <p>Search Option = {{ searchOption }}</p>
-    <p>Search = {{ search }}</p>
+
+    <ol id="joyRideTipContent">
+        <li data-id="" data-button="Start"
+            data-options="tipLocation:center;tipAnimation:fade">
+            <h2>Welcome!</h2>
+            <p>Press Start to begin the guide.</p>
+        </li>
+
+        <li data-id="searchOption" data-button="Next"
+            data-options="tipLocation:top;tipAnimation:fade">
+            <h2>Search categories</h2>
+            <p>There are 3 categories:</p>
+            <ul>
+                <li>Catalog</li>
+                <li>Dataset</li>
+                <li>Distribution</li>
+            </ul>
+        </li>
+
+        <li data-id="searchOption" data-button="Next"
+            data-options="tipLocation:top;tipAnimation:fade">
+            <h2>Catalog</h2>
+            <p>Provides data exchange.
+                Currently there is only one catalog being used: the services of <a href="http://fsb.rovin.be/" target="_blank">http://fsb.rovin.be/</a>
+            </p>
+        </li>
+
+        <li data-id="searchOption" data-button="Next"
+            data-options="tipLocation:top;tipAnimation:fade">
+            <h2>Dataset</h2>
+            <p>Data that is related to service families and service.</p>
+            <p>For example: <a href="http://fsb.rovin.be/family/S216-eInvoiceServices">http://fsb.rovin.be/family/S216-eInvoiceServices</a></p>
+            <p>This specific dataset consists from 2 distributions (mini-datasets):
+                <a href="http://fsb.rovin.be/service/S218-SupplierService">S218-SupplierService</a> &
+                <a href="http://fsb.rovin.be/service/S217-CustomerService">S217-CustomerService</a>
+            </p>
+        </li>
+
+        <li data-id="searchOption" data-button="Next"
+            data-options="tipLocation:top;tipAnimation:fade">
+            <h2>Distribution</h2>
+            <p>Data that is related to service methods and services.</p>
+        </li>
+
+        <li data-id="search" data-button="Next"
+            data-options="tipLocation:top;tipAnimation:fade">
+            <h2>Search field</h2>
+            <p>Enter something you want to search.</p>
+            <p>It will automatically search for results.</p>
+
+        </li>
+
+        <li data-id="" data-button="Thank you :)"
+            data-options="tipLocation:center">
+            <h3>We hope everything is clear now.</h3>
+        </li>
+
+    </ol>
+
+    <script>
+        $(window).load(function() {
+            $("#joyRideTipContent").joyride({
+                modal: true,
+                expose: true
+            });
+        });
+        $("#questionButton").click(function() {
+            $("#joyRideTipContent").joyride({autoStart: true});
+        });
+    </script>
+
 {% endblock %}
