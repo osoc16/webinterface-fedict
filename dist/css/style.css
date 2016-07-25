@@ -218,3 +218,9 @@ section{
     left: 0;
     right: 0;
 }
+
+.joyride-expose-wrapper {
+    background-color: transparent;
+    box-shadow: none;
+    -webkit-box-shadow: none;
+}
