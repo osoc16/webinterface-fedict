@@ -57,9 +57,8 @@
     <div  class="tbl-content">
     <table cellpadding="0" cellspacing="0" border="0">
     <tbody>
-    <div id="loading">
-        <img id="loading-image" src="images/ajax-loader.gif" alt="Loading..." />
-    </div>
+
+    <script src='http://client.linkeddatafragments.org/scripts/ldf-client-jquery-packaged.js'></script>
     <script>
         var fragmentsClient = new ldf.FragmentsClient('http://185.14.185.158:5000/triplestore');
 
@@ -80,8 +79,8 @@
                 var subject = "";
                 var predicate = "";
                 var object = "";
-                $('#loading').show();
                 $.each(data, function(key, value) {
+
                     if (key == "?s") subject = value;
                     else if (key == "?p") predicate = value;
                       else if (key == "?o" && (value.toLowerCase().indexOf(searchOption.toLowerCase()) > -1 || searchOption == "")  ) {
@@ -93,17 +92,12 @@
                                 '<td>'+ object +'</td>' +
                                 '</tr>';
                         $("tbody").append(output);
-                        $('#loading').hide();
-
-                    }else {
-                        $('#loading').hide();
                     }
 
                 });
                 $('tr.tableContent').click(function() {
                     $url = $(this).attr('data-url');
                     window.open('webservice.php?subject='  + $url, '_self');
-                    //document.location = 'webservice.php?subject=' + subject;
                 });
         });
     </script>
