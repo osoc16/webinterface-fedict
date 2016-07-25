@@ -4,7 +4,7 @@
 
 {% block pageContent %}
     <input id="questionButton" type="image" src="./images/question.png"/>
-    <form id="searchForm" action="index.php" method="post">
+    <form id="searchForm" action="." method="post">
         <select id="searchOption" name="searchOption" onchange="this.form.submit()">
             {% if searchOption == 'Catalog' %}
                 <option value="Catalog" selected>Catalog</option>
