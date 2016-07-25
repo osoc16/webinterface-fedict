@@ -53,7 +53,9 @@ Now visit http://localhost:5000/ in your browser.
 ### init.d script
 Another possibility is an /etc/init.d script. This script will start the ldf-server when the server has been rebooted. 
 I got the idea from this repo [https://github.com/chovy/node-startup](https://github.com/chovy/node-startup).
-This is how our script looks like. 
+This is how the variables of out script looks like:
+
+[https://s32.postimg.org/cx4pxbvxx/variable_opstartscript.png](https://s32.postimg.org/cx4pxbvxx/variable_opstartscript.png)
 
 
 
