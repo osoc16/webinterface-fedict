@@ -28,11 +28,11 @@ Important note: When trying to run on unix environment chmod -R 777 might be nee
 
 ## Hosting own ldf-server (optional)
 
-# Install the server
+# Install the ldf-server
 
 You can install your own Node.js ldf-server with this command ``npm install -g ldf-server``.
  
-# Configure the data sources
+## Configure the data sources
 
 ``Config.json`` is used to configure the data sources.
 This is an example of our configuration file.
@@ -42,6 +42,13 @@ We have one concatenated DCAT file in turtle syntax.
 The important changes we've made in the config.json are the type and settings of the datasource.  
 
 More information on: https://www.npmjs.com/package/ldf-server.
+
+## Start the server
+
+After creating a configuration file, execute ``ldf-server config.json 5000 4 ``
+Here, 5000 is the HTTP port on which the server will listen, and 4 the number of worker processes.
+
+Now visit http://localhost:5000/ in your browser.
 
 # Configure the ldf-client
 
