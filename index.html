@@ -1,81 +1,20 @@
 ---
 layout: default
-title: {{ site.name }}
 ---
 
-<div id="home">
-  <h2>Introduction</h2>
-  <p>This web-interface is easy to use tool for users that would like to search and inspect datasets.
-  It utilises <a href="https://github.com/LinkedDataFragments/Client.js" target="_blank">LDF Client</a> and
-    <a href="https://github.com/LinkedDataFragments/Server.js" target="_blank">LDF Server</a> behind the scenes.
-    And it's designed to be compatible with all browsers and mobile devices.
-  </p>
+<div class="home">
 
-  <h2>Web-interface</h2>
-  <p>The UI consists from a
-    <span style="color: #a349a4;">search</span>,
-    <span style="color: #22b14c;">guide </span> and a
-    <span style="color: #ed1c24;"> table showing the datasets</span>.</p>
-  <img src="images/webinterfaceMain.PNG" alt="webinterface main" style="max-width:100%;max-height:100%;">
+  <h1>Posts</h1>
 
-  <h3 style="color: #a349a4;">Search</h3>
-  <p>DCAT describes datasets on 3 different levels. The Catalog,
-  the Dataset and the Distribution level. Each level contains information, meta-data, about itself, such as the title, description, and so on. Furthermore, the upper layers contains URI references to its children,
-  which means it’s easy to cross-reference all of the data.</p>
-  <b>The Catalog</b>
-  <p>The Catalog is the upper level in the DCAT standard.
-    It contains a description of itself, such as the title, description, publisher
-    and licenses. It also contains references to the different Datasets
-  which can be found within this particular Data Catalog.</p>
-  <b>The Dataset</b>
-  <p>The Dataset contains information about the individual Dataset,
-    such as the author, which category the dataset belongs to,
-    geographical information, and so on.
-    It also has references to all the different Distribution methods of this particular dataset.</p>
-  <b>The Distribution</b>
-  <p>This is the deepest level of the DCAT standard.
-    At this level we define the access URL for the data, type (CSV, JSON, …),
-    license, size, download URL, and so on.</p>
+  <ul class="posts">
+    {% for post in site.posts %}
+      <li>
+        <span class="post-date">{{ post.date | date: "%b %-d, %Y" }}</span>
+        <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
+      </li>
+    {% endfor %}
+  </ul>
 
-  <h3 style="color: #22b14c;">Guide</h3>
-  <p>Explains in (a nice way) details about the web-interface.</p>
-  <img src="images/webinterfaceGuide.PNG" alt="webinterface guide" style="max-width:100%;max-height:100%;">
+  <p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | prepend: site.baseurl }}">via RSS</a></p>
 
-  <h3 style="color: #ed1c24;">Table of datesets</h3>
-  <p>Datasets are displayed here.</p>
-
-  <h2>How it works</h2>
-  <p>
-  <img src="images/ldflogo.svg" alt="LDF logo" style="max-width:30%;max-height:30%; float: left;">
-  For providing datasets to the web-interface, LDF or Linked Data Fragments is used.
-  The web-interface uses  <a href="https://github.com/LinkedDataFragments/Client.js" target="_blank">LDF Client</a>.
-  The server uses <a href="https://github.com/LinkedDataFragments/Server.js" target="_blank">LDF Server</a> in the background.
-  </p>
-  </br> </br>
-  <b>LDF-Server</b>
-  <p>Provides access to different types of data that's stored on the server.
-    When a LDF-Client requests data, <a href="http://linkeddatafragments.org/concept/#tpf" target="_blank">Triple Pattern Fragments</a> are used for efficient client-side querying.
-  </p>
-  <b>LDF-Client</b>
-  <p>Clients execute SPARQL queries using Triple Pattern Fragments.
-    This way, servers only need to publish Triple Pattern Fragments of a dataset,
-    providing a scalable yet efficient way to query Linked Data.
-  </p>
-  
-  <h2>WSDL to DCAT</h2>
-  <p>Before this web-interface existed, <a href="https://github.com/osoc16/WSDL2DCAT/" target="_blank">the project WSDL2DCAT</a> was made.</p>
-  <p>It basically converts WSDL files (that represent services)
-    to DCAT files in which services are linked with each other.
-    After the tool was finished, a web-interface was needed for displaying these DCAT files.
-  </p>
-  For more detailed information, please visit the <a href="https://github.com/osoc16/WSDL2DCAT/wiki" target="_blank">wiki</a>.
-
-  <h2>The team</h2>
-  <p>The projects were made by 2 (young) back-end developers that worked in open Summer of code 2016.
-    Both developers had to make a tool for converting WSDL files to DCAT.
-    After successful first week, they worked on the web-interface which
-    provides end-users the ease to search DCAT files.</p>
-
-  <a href="https://be.linkedin.com/in/saglamumut" target="_blank"><p>Umut Saglam</p></a>
-  <a href="https://be.linkedin.com/in/miguel-de-strooper-99b121114" target="_blank"><p>Miguel De Strooper</p></a>
 </div>

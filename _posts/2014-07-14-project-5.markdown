@@ -1,0 +1,14 @@
+---
+title: Web interface
+subtitle: Website Design
+layout: default
+modal-id: 5
+date: 2016-07-16
+img: webinterfaceMain.png
+thumbnail: webinterfaceMain-thumbnail.png
+alt: image-alt
+project-date: Juli 2016
+cont: Home page webinterface
+category: Web interface
+description: Dit is een screenshot van de web interface. In het paars vindt u het zoekveld voor te zoeken op catalog, dataset of distribution. In het rood komen de details van de zoekresultaten en in met de helpknop wordt de tutorial gestart.
+---

@@ -1,18 +1,51 @@
-# Setup
-title:        DCAT Web-interface
-tagline:      Web-interface for browsing datasets
-#baseurl:      ""
-baseurl:      "/webinterface-fedict"
+url: https://y7kim.github.io
+baseurl: /wsdl2dcat/
 
-paginate:     1
-
-# About/contact
-author:
-  name:       oSoc16
-  url:        http://2016.summerofcode.be/
+# Site settings
+title: WSDL2DCAT
+email: pieterjan@openknowledge.be
+description: "Team LD-works from oSoc16"
 
 
-gems: [jekyll-paginate]
+# Team names, titles and social links
+people:
+- name: Miguel De Strooper
+  pic: MiguelGIF.gif
+  position: Backend developer
+  social:
+    - title: twitter
+      url: https://twitter.com/Miguel_DeSt
+    - title: linkedin
+      url: https://www.linkedin.com/in/miguel-de-strooper-99b121114
 
-#Others
+- name: Umut Saglam
+  pic: UmutGIF.gif
+  position: Backend developer
+  social:
+    - title: twitter
+      url: https://twitter.com/umutsaglam1994
+    - title: linkedin
+      url: https://be.linkedin.com/in/saglamumut
+
+- name: Sander Meert
+  pic: SanderMGIF.gif
+  position: Coach
+  social:
+    - title: twitter
+      url: https://twitter.com/Sandmeert
+    - title: linkedin
+      url: https://be.linkedin.com/in/sander-meert-2b64689a
+
+# Social networks usernames (many more available: google-plus, flickr, dribbble, pinterest, instagram, tumblr, linkedin, etc.)
+social:
+  - title: github
+    url: https://github.com/osoc16/WSDL2DCAT
+
+# Postal address (add as many lines as necessary)
+address:
+  - line: 3481 Melrose Place
+  - line: Beverly Hills, CA 90210
+
+# Build settings
 markdown: kramdown
+permalink: pretty
