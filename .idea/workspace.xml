@@ -2,8 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="840bba8a-0c3c-4abf-9ccf-62aae5960bb0" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_data/template.yml" afterPath="$PROJECT_DIR$/_data/template.yml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_includes/contact.html" afterPath="$PROJECT_DIR$/_includes/contact.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_includes/content.html" afterPath="$PROJECT_DIR$/_includes/content.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_includes/css/agency.css" afterPath="$PROJECT_DIR$/_includes/css/agency.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_includes/header.html" afterPath="$PROJECT_DIR$/_includes/header.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_includes/team.html" afterPath="$PROJECT_DIR$/_includes/team.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_includes/problems_solutions.html" afterPath="$PROJECT_DIR$/_includes/problems_solutions.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_includes/screenshots_grid.html" afterPath="$PROJECT_DIR$/_includes/screenshots_grid.html" />
     </list>
     <ignored path="agency-jekyll-theme-gh-pages.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -24,23 +29,41 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="clients.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/_includes/clients.html">
+      <file leaf-file-name="contact.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/_includes/contact.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="68">
-              <caret line="4" column="52" selection-start-line="4" selection-start-column="52" selection-end-line="4" selection-end-column="52" />
-              <folding>
-                <element signature="n#style#0;n#div#1;n#div#0;n#section#0;n#!!top" expanded="true" />
-              </folding>
+            <state relative-caret-position="136">
+              <caret line="8" column="40" selection-start-line="8" selection-start-column="40" selection-end-line="8" selection-end-column="40" />
+              <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="contact.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/_includes/contact.html">
+      <file leaf-file-name="agency.css" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/_includes/css/agency.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="221">
-              <caret line="13" column="76" selection-start-line="13" selection-start-column="76" selection-end-line="13" selection-end-column="76" />
+            <state relative-caret-position="289">
+              <caret line="17" column="48" selection-start-line="17" selection-start-column="48" selection-end-line="17" selection-end-column="48" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="content.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/_includes/content.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="102">
+              <caret line="6" column="86" selection-start-line="6" selection-start-column="86" selection-end-line="6" selection-end-column="86" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="template.yml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/_data/template.yml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="102">
+              <caret line="6" column="18" selection-start-line="6" selection-start-column="18" selection-end-line="6" selection-end-column="18" />
               <folding />
             </state>
           </provider>
@@ -56,11 +79,31 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="header.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="problems_solutions.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/_includes/problems_solutions.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="102">
+              <caret line="6" column="101" selection-start-line="6" selection-start-column="101" selection-end-line="6" selection-end-column="101" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="header.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/_includes/header.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="389">
-              <caret line="46" column="62" selection-start-line="46" selection-start-column="62" selection-end-line="46" selection-end-column="62" />
+              <caret line="46" column="63" selection-start-line="46" selection-start-column="63" selection-end-line="46" selection-end-column="63" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="screenshots_grid.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/_includes/screenshots_grid.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="102">
+              <caret line="6" column="110" selection-start-line="6" selection-start-column="110" selection-end-line="6" selection-end-column="110" />
               <folding />
             </state>
           </provider>
@@ -71,46 +114,6 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="68">
               <caret line="4" column="16" selection-start-line="4" selection-start-column="16" selection-end-line="4" selection-end-column="16" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="modals.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/_includes/modals.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="340">
-              <caret line="20" column="56" selection-start-line="20" selection-start-column="56" selection-end-line="20" selection-end-column="56" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="2014-07-14-project-5.markdown" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/_posts/2014-07-14-project-5.markdown">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="221">
-              <caret line="13" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="2014-07-17-project-2.markdown" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/_posts/2014-07-17-project-2.markdown">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="187">
-              <caret line="11" column="29" selection-start-line="11" selection-start-column="29" selection-end-line="11" selection-end-column="29" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="js.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/_includes/js.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -135,22 +138,22 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/_includes/services.html" />
-        <option value="$PROJECT_DIR$/_data/template.yml" />
         <option value="$PROJECT_DIR$/_includes/portfolio_grid.html" />
         <option value="$PROJECT_DIR$/_includes/footer.html" />
         <option value="$PROJECT_DIR$/_config.yml" />
-        <option value="$PROJECT_DIR$/_includes/contact.html" />
-        <option value="$PROJECT_DIR$/_includes/content.html" />
-        <option value="$PROJECT_DIR$/_includes/screenshots_grid.html" />
         <option value="$PROJECT_DIR$/_includes/modals.html" />
         <option value="$PROJECT_DIR$/_layouts/default.html" />
-        <option value="$PROJECT_DIR$/_includes/problems_solutions.html" />
-        <option value="$PROJECT_DIR$/_includes/css/agency.css" />
         <option value="$PROJECT_DIR$/_posts/2014-07-14-project-5.markdown" />
         <option value="$PROJECT_DIR$/_posts/2014-07-17-project-2.markdown" />
         <option value="$PROJECT_DIR$/_includes/clients.html" />
         <option value="$PROJECT_DIR$/_includes/team.html" />
+        <option value="$PROJECT_DIR$/_includes/contact.html" />
+        <option value="$PROJECT_DIR$/_data/template.yml" />
+        <option value="$PROJECT_DIR$/_includes/css/agency.css" />
+        <option value="$PROJECT_DIR$/_includes/content.html" />
         <option value="$PROJECT_DIR$/_includes/header.html" />
+        <option value="$PROJECT_DIR$/_includes/problems_solutions.html" />
+        <option value="$PROJECT_DIR$/_includes/screenshots_grid.html" />
       </list>
     </option>
   </component>
@@ -377,12 +380,12 @@
       <option name="presentableId" value="Default" />
       <updated>1469525055460</updated>
       <workItem from="1469525057296" duration="12799000" />
-      <workItem from="1469542857200" duration="3659000" />
+      <workItem from="1469542857200" duration="5375000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="16458000" />
+    <option name="totallyTimeSpent" value="18174000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1616" height="876" extended-state="6" />
@@ -532,14 +535,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/_data/template.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="17" selection-start-line="2" selection-start-column="11" selection-end-line="2" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/css/font-awesome/css/font-awesome.min.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -558,14 +553,6 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/_includes/css/agency.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="414">
-          <caret line="301" column="0" selection-start-line="301" selection-start-column="0" selection-end-line="301" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/_layouts/default.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="187">
@@ -582,42 +569,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/_includes/screenshots_grid.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="12" column="30" selection-start-line="12" selection-start-column="30" selection-end-line="12" selection-end-column="39" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/_includes/problems_solutions.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="704">
-          <caret line="43" column="91" selection-start-line="43" selection-start-column="91" selection-end-line="43" selection-end-column="91" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/_layouts/style.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="34">
           <caret line="2" column="8" selection-start-line="2" selection-start-column="8" selection-end-line="2" selection-end-column="8" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/_includes/content.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="554">
-          <caret line="36" column="137" selection-start-line="36" selection-start-column="137" selection-end-line="36" selection-end-column="137" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/_includes/contact.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="13" column="76" selection-start-line="13" selection-start-column="76" selection-end-line="13" selection-end-column="76" />
           <folding />
         </state>
       </provider>
@@ -664,6 +619,30 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/_data/template.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" column="18" selection-start-line="6" selection-start-column="18" selection-end-line="6" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/_includes/css/agency.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="17" column="48" selection-start-line="17" selection-start-column="48" selection-end-line="17" selection-end-column="48" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/_includes/contact.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" column="40" selection-start-line="8" selection-start-column="40" selection-end-line="8" selection-end-column="40" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/_includes/team.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="544">
@@ -680,6 +659,14 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/_includes/content.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" column="86" selection-start-line="6" selection-start-column="86" selection-end-line="6" selection-end-column="86" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/_includes/head.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="459">
@@ -691,7 +678,23 @@
     <entry file="file://$PROJECT_DIR$/_includes/header.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="389">
-          <caret line="46" column="62" selection-start-line="46" selection-start-column="62" selection-end-line="46" selection-end-column="62" />
+          <caret line="46" column="63" selection-start-line="46" selection-start-column="63" selection-end-line="46" selection-end-column="63" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/_includes/problems_solutions.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" column="101" selection-start-line="6" selection-start-column="101" selection-end-line="6" selection-end-column="101" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/_includes/screenshots_grid.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" column="110" selection-start-line="6" selection-start-column="110" selection-end-line="6" selection-end-column="110" />
           <folding />
         </state>
       </provider>
