@@ -1,0 +1,14 @@
+---
+title: WSDL2DCAT converter
+subtitle: Backend development
+layout: default
+modal-id: 2
+date: 2016-07-16
+img: converter.png
+thumbnail: converter-thumbnail.png
+alt: image-alt
+project-date: Juli 2016
+cont: Converting wsdl to dcat
+category: Backend development
+description: Convert standalone document description to linked data files.
+---
