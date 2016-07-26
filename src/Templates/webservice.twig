@@ -43,12 +43,13 @@
                 if (predicate.length > 1 && objData.length > 1){
 
                     if(objData.indexOf('http') !=-1){
+                        var url = objData;
+                        if ((predicate.indexOf('distribution')!=-1) || (predicate.indexOf('dataset')!=-1)) url = "webservice.php?subject=" + objData;
                         output =
-                                '<tr class="tableContent" data-url="'+ objData + '">' +
+                                '<tr class="tableContent" data-url="'+ url + '">' +
                                 '<td>' + predicate.substr((predicate.lastIndexOf('/') + 1)) + '</td>' +
                                 '<td>' + objData.substr((objData.lastIndexOf('/') + 1)) + '</td>' +
                                 '</tr>';
-                        //$("tbody").append(output);
                     } else {
                         output =
                                 '<tr>' +
@@ -65,24 +66,5 @@
                 window.open(url, '_blank');
             });
         });
-        /*
-        var queryMethods = 'SELECT * { ?s  <http://www.w3.org/ns/dcat#distribution> ?o. ?s ?p ?o  } LIMIT 100',
-                results = new ldf.SparqlIterator(queryMethods, { fragmentsClient: fragmentsClient });
-        results.on('data', function (data) {
-            console.log(data);
-            $.each(data, function(key, value) {
-                if (key == "?o"){
-                    var output =
-                            '<tr>' +
-                            '<td>'+ value +'</td>' +
-                            '</tr>';
-                    $("tbody").append(output);
-                    $('tr').click(function() {
-                        window.open(value, '_blank');
-                    });
-                }
-            });
-        });
-         */
     </script>
 {% endblock %}
