@@ -264,9 +264,9 @@ fieldset[disabled] .btn-xl.active {
 
 header {
     text-align: center;
-    color: #fff;
+    color: #333;
     background-attachment: scroll;
-    background-image: url('{{ site.baseurl }}/img/header-bg.jpg');
+    background-image: url('{{ site.baseurl }}/img/header.gif');
     background-position: center center;
     background-repeat: none;
     -webkit-background-size: cover;
@@ -286,6 +286,8 @@ header .intro-text .intro-lead-in {
     font-size: 22px;
     font-style: italic;
     line-height: 22px;
+    display: inline-block;
+    background: rgba(255,255,255,.4);
 }
 
 header .intro-text .intro-heading {
@@ -295,6 +297,8 @@ header .intro-text .intro-heading {
     font-size: 50px;
     font-weight: 700;
     line-height: 50px;
+    background: rgba(255,255,255,.4);
+    display: inline-block;
 }
 
 @media(min-width:768px) {
@@ -309,6 +313,8 @@ header .intro-text .intro-heading {
         font-size: 40px;
         font-style: italic;
         line-height: 40px;
+
+
     }
 
     header .intro-text .intro-heading {
