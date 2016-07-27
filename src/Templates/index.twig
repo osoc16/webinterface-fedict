@@ -3,8 +3,8 @@
 {% set pageTitle = 'Fedict - Webinterface' %}
 
 {% block pageContent %}
-    <input id="questionButton" type="image" src="../dist/images/question.png"/>
-    <form id="searchForm" action="index.php" method="post">
+    <input id="questionButton" type="image" src="./images/question.png"/>
+    <form id="searchForm" action="." method="post">
         <select id="searchOption" name="searchOption" onchange="this.form.submit()">
             {% if searchOption == 'Catalog' %}
                 <option value="Catalog" selected>Catalog</option>
@@ -95,6 +95,7 @@
                     }
 
                 });
+
                 $('tr.tableContent').click(function() {
                     $url = $(this).attr('data-url');
                     window.open('webservice.php?subject='  + $url, '_self');
@@ -122,32 +123,35 @@
                 <li>Dataset</li>
                 <li>Distribution</li>
             </ul>
+
         </li>
 
         <li data-id="searchOption" data-button="Next"
             data-options="tipLocation:top;tipAnimation:fade">
             <h2>Catalog</h2>
             <p>Provides data exchange.
-                Currently there is only one catalog being used: the services of <a href="http://fsb.rovin.be/" target="_blank">http://fsb.rovin.be/</a>
+                Currently there is only one catalog being used: the services of <a href="webservice.php?subject=http://fsb.rovin.be" target="_blank">http://fsb.rovin.be</a>
             </p>
         </li>
 
         <li data-id="searchOption" data-button="Next"
             data-options="tipLocation:top;tipAnimation:fade">
             <h2>Dataset</h2>
-            <p>Data that is related to service families and service.</p>
-            <p>For example: <a href="http://fsb.rovin.be/family/S216-eInvoiceServices">http://fsb.rovin.be/family/S216-eInvoiceServices</a></p>
-            <p>This specific dataset consists from 2 distributions (mini-datasets):
-                <a href="http://fsb.rovin.be/service/S218-SupplierService">S218-SupplierService</a> &
-                <a href="http://fsb.rovin.be/service/S217-CustomerService">S217-CustomerService</a>
+            <p>Data that is related to services or their families.</p>
+            <p>For example: <a href="webservice.php?subject=http://fsb.rovin.be/family/S216-eInvoiceServices" target="_blank">http://fsb.rovin.be/family/S216-eInvoiceServices</a></p>
+            <p>This specific dataset consists of 2 distributions:
+                <a href="webservice.php?subject=http://fsb.rovin.be/service/S218-SupplierService" target="_blank">S218-SupplierService</a> &
+                <a href="webservice.php?subject=http://fsb.rovin.be/service/S217-CustomerService" target="_blank">S217-CustomerService</a>
             </p>
         </li>
 
         <li data-id="searchOption" data-button="Next"
             data-options="tipLocation:top;tipAnimation:fade">
             <h2>Distribution</h2>
-            <p>Data that is related to service methods and services.</p>
+            <p>Data that is related to services or their methods.</p>
         </li>
+
+
 
         <li data-id="search" data-button="Next"
             data-options="tipLocation:top;tipAnimation:fade">
@@ -157,9 +161,9 @@
 
         </li>
 
-        <li data-id="" data-button="Thank you :)"
+        <li data-id="" data-button="Thank you for your time"
             data-options="tipLocation:center">
-            <h3>We hope everything is clear now.</h3>
+            <h3>We hope the guide helped you.</h3>
         </li>
 
     </ol>
