@@ -4,8 +4,8 @@ subtitle: Backend development
 layout: default
 modal-id: 2
 date: 2016-07-16
-img: converter.png
-thumbnail: converter-thumbnail.png
+img: convert.jpg
+thumbnail: convert-thumbnail.jpg
 alt: image-alt
 project-date: Juli 2016
 cont: Converting wsdl to dcat
