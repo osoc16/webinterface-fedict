@@ -80,6 +80,7 @@
                 var subject = "";
                 var predicate = "";
                 var object = "";
+                var len = data.length
                 $('#loading').show();
                 $.each(data, function(key, value) {
                     if (key == "?s") subject = value;
@@ -93,13 +94,15 @@
                                 '<td>'+ object +'</td>' +
                                 '</tr>';
                         $("tbody").append(output);
-                        $('#loading').hide();
-
+                        if (index == len - 1) {
+                            $('#loading').hide();
+                        }
                     }else {
                         $('#loading').hide();
                     }
 
                 });
+
                 $('tr.tableContent').click(function() {
                     $url = $(this).attr('data-url');
                     window.open('webservice.php?subject='  + $url, '_self');
