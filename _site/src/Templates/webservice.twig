@@ -1,0 +1,70 @@
+{% extends 'layout.twig' %}
+
+{% set pageTitle = 'Fedict - Detailpage' %}
+
+{% block pageContent %}
+
+    <a href="{{ subject }}" target="_blank">
+        {% set arraySubject = subject|split('/') %}
+        <h2>{{ attribute(arraySubject, arraySubject|length -1)}}</h2>
+    </a>
+
+    <div class="description"></div>
+    <div class="tbl-header">
+        <table cellpadding="0" cellspacing="0" border="0">
+            <thead>
+            <tr>
+                <th>Key</th>
+                <th>Value</th>
+            </tr>
+            </thead>
+        </table>
+    </div>
+    <div  class="tbl-content">
+    <table cellpadding="0" cellspacing="0" border="0">
+    <tbody>
+    </tbody>
+    </table>
+    </div>
+    <script src='http://client.linkeddatafragments.org/scripts/ldf-client-jquery-packaged.js'></script>
+    <script>
+        var fragmentsClient = new ldf.FragmentsClient('http://185.14.185.158:5000/triplestore');
+        var queryDescription = 'SELECT * {<'+ "{{ subject }}" + '>  ?p ?o} LIMIT 100',
+                results = new ldf.SparqlIterator(queryDescription, { fragmentsClient: fragmentsClient });
+        results.on('data', function (data) {
+            //console.log(data);
+            var predicate = "";
+            var objData = "";
+            var output = "";
+            $.each(data, function(key, value) {
+                if (key == "?p") predicate = value;
+                else if (key == "?o") objData = value;
+
+                if (predicate.length > 1 && objData.length > 1){
+
+                    if(objData.indexOf('http') !=-1){
+                        var url = objData;
+                        if ((predicate.indexOf('distribution')!=-1) || (predicate.indexOf('dataset')!=-1)) url = "webservice.php?subject=" + objData;
+                        output =
+                                '<tr class="tableContent" data-url="'+ url + '">' +
+                                '<td>' + predicate.substr((predicate.lastIndexOf('/') + 1)) + '</td>' +
+                                '<td>' + objData.substr((objData.lastIndexOf('/') + 1)) + '</td>' +
+                                '</tr>';
+                    } else {
+                        output =
+                                '<tr>' +
+                                '<td>' + predicate.substr((predicate.lastIndexOf('/') + 1)) + '</td>' +
+                                '<td>' + objData + '</td>' +
+                                '</tr>';
+                    }
+                    $("tbody").append(output);
+                    predicate = "";
+                }
+            });
+            $('tr.tableContent').click(function() {
+                var url = $(this).attr('data-url');
+                window.open(url, '_blank');
+            });
+        });
+    </script>
+{% endblock %}
