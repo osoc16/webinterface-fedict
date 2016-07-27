@@ -508,10 +508,19 @@ section h3.section-subheading {
     background-color: #{{ site.data.template.color.primary }};
 }
 
+.timeline>li .timeline-image a {
+color: white;
+}
+
+.timeline>li .timeline-image a:hover {
+    color: white;
+}
+
 .timeline>li .timeline-image h4 {
     margin-top: 12px;
     font-size: 10px;
     line-height: 14px;
+    color: white;
 }
 
 .timeline>li.timeline-inverted>.timeline-panel {
