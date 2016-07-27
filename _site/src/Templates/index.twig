@@ -58,6 +58,7 @@
     <table cellpadding="0" cellspacing="0" border="0">
     <tbody>
 
+    <script src='http://client.linkeddatafragments.org/scripts/ldf-client-jquery-packaged.js'></script>
     <script>
         var fragmentsClient = new ldf.FragmentsClient('http://185.14.185.158:5000/triplestore');
 
@@ -79,6 +80,7 @@
                 var predicate = "";
                 var object = "";
                 $.each(data, function(key, value) {
+
                     if (key == "?s") subject = value;
                     else if (key == "?p") predicate = value;
                       else if (key == "?o" && (value.toLowerCase().indexOf(searchOption.toLowerCase()) > -1 || searchOption == "")  ) {
@@ -97,7 +99,6 @@
                 $('tr.tableContent').click(function() {
                     $url = $(this).attr('data-url');
                     window.open('webservice.php?subject='  + $url, '_self');
-                    //document.location = 'webservice.php?subject=' + subject;
                 });
         });
     </script>
@@ -155,8 +156,9 @@
         <li data-id="search" data-button="Next"
             data-options="tipLocation:top;tipAnimation:fade">
             <h2>Search field</h2>
-            <p>Enter something you want to search.</p>
-            <p>It will automatically search for results.</p>
+            <p>Enter your search text here.
+                <br>
+            It will automatically search for results.</p>
 
         </li>
 

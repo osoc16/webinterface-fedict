@@ -108,11 +108,12 @@ class __TwigTemplate_f66a6b68e2103fa7756c8ea3e7c280cbf1a5f4ba679597487c0c8b2e158
     <table cellpadding=\"0\" cellspacing=\"0\" border=\"0\">
     <tbody>
 
+    <script src='http://client.linkeddatafragments.org/scripts/ldf-client-jquery-packaged.js'></script>
     <script>
         var fragmentsClient = new ldf.FragmentsClient('http://185.14.185.158:5000/triplestore');
 
         var query = 'SELECT ?s ?p ?o { ?s a <http://www.w3.org/ns/dcat#' + \"";
-        // line 64
+        // line 65
         echo twig_escape_filter($this->env, (isset($context["searchOption"]) ? $context["searchOption"] : null), "html", null, true);
         echo "\" + '> . ' +
                         '?s <http://purl.org/dc/terms/title> ?o . ' +
@@ -122,18 +123,18 @@ class __TwigTemplate_f66a6b68e2103fa7756c8ea3e7c280cbf1a5f4ba679597487c0c8b2e158
 
 
         if (\"";
-        // line 71
+        // line 72
         echo twig_escape_filter($this->env, (isset($context["search"]) ? $context["search"] : null), "html", null, true);
         echo "\" == \"\"){
             var query = 'SELECT ?s ?p ?o WHERE {?s  ?p <http://www.w3.org/ns/dcat#' + \"";
-        // line 72
+        // line 73
         echo twig_escape_filter($this->env, (isset($context["searchOption"]) ? $context["searchOption"] : null), "html", null, true);
         echo "\" + '>. ?s ?p ?o } ',
             results = new ldf.SparqlIterator(query, { fragmentsClient: fragmentsClient });
         }
 
         var searchOption = \"";
-        // line 76
+        // line 77
         echo twig_escape_filter($this->env, (isset($context["search"]) ? $context["search"] : null), "html", null, true);
         echo "\";
             results.on('data', function (data ) {
@@ -141,6 +142,7 @@ class __TwigTemplate_f66a6b68e2103fa7756c8ea3e7c280cbf1a5f4ba679597487c0c8b2e158
                 var predicate = \"\";
                 var object = \"\";
                 \$.each(data, function(key, value) {
+
                     if (key == \"?s\") subject = value;
                     else if (key == \"?p\") predicate = value;
                       else if (key == \"?o\" && (value.toLowerCase().indexOf(searchOption.toLowerCase()) > -1 || searchOption == \"\")  ) {
@@ -159,7 +161,6 @@ class __TwigTemplate_f66a6b68e2103fa7756c8ea3e7c280cbf1a5f4ba679597487c0c8b2e158
                 \$('tr.tableContent').click(function() {
                     \$url = \$(this).attr('data-url');
                     window.open('webservice.php?subject='  + \$url, '_self');
-                    //document.location = 'webservice.php?subject=' + subject;
                 });
         });
     </script>
@@ -217,8 +218,9 @@ class __TwigTemplate_f66a6b68e2103fa7756c8ea3e7c280cbf1a5f4ba679597487c0c8b2e158
         <li data-id=\"search\" data-button=\"Next\"
             data-options=\"tipLocation:top;tipAnimation:fade\">
             <h2>Search field</h2>
-            <p>Enter something you want to search.</p>
-            <p>It will automatically search for results.</p>
+            <p>Enter your search text here.
+                <br>
+            It will automatically search for results.</p>
 
         </li>
 
@@ -256,7 +258,7 @@ class __TwigTemplate_f66a6b68e2103fa7756c8ea3e7c280cbf1a5f4ba679597487c0c8b2e158
 
     public function getDebugInfo()
     {
-        return array (  137 => 76,  130 => 72,  126 => 71,  116 => 64,  74 => 25,  71 => 24,  67 => 22,  63 => 20,  60 => 19,  56 => 17,  52 => 15,  49 => 14,  45 => 12,  41 => 10,  39 => 9,  34 => 6,  31 => 5,  27 => 1,  25 => 3,  11 => 1,);
+        return array (  138 => 77,  131 => 73,  127 => 72,  117 => 65,  74 => 25,  71 => 24,  67 => 22,  63 => 20,  60 => 19,  56 => 17,  52 => 15,  49 => 14,  45 => 12,  41 => 10,  39 => 9,  34 => 6,  31 => 5,  27 => 1,  25 => 3,  11 => 1,);
     }
 }
 /* {% extends 'layout.twig' %}*/
@@ -319,6 +321,7 @@ class __TwigTemplate_f66a6b68e2103fa7756c8ea3e7c280cbf1a5f4ba679597487c0c8b2e158
 /*     <table cellpadding="0" cellspacing="0" border="0">*/
 /*     <tbody>*/
 /* */
+/*     <script src='http://client.linkeddatafragments.org/scripts/ldf-client-jquery-packaged.js'></script>*/
 /*     <script>*/
 /*         var fragmentsClient = new ldf.FragmentsClient('http://185.14.185.158:5000/triplestore');*/
 /* */
@@ -340,6 +343,7 @@ class __TwigTemplate_f66a6b68e2103fa7756c8ea3e7c280cbf1a5f4ba679597487c0c8b2e158
 /*                 var predicate = "";*/
 /*                 var object = "";*/
 /*                 $.each(data, function(key, value) {*/
+/* */
 /*                     if (key == "?s") subject = value;*/
 /*                     else if (key == "?p") predicate = value;*/
 /*                       else if (key == "?o" && (value.toLowerCase().indexOf(searchOption.toLowerCase()) > -1 || searchOption == "")  ) {*/
@@ -358,7 +362,6 @@ class __TwigTemplate_f66a6b68e2103fa7756c8ea3e7c280cbf1a5f4ba679597487c0c8b2e158
 /*                 $('tr.tableContent').click(function() {*/
 /*                     $url = $(this).attr('data-url');*/
 /*                     window.open('webservice.php?subject='  + $url, '_self');*/
-/*                     //document.location = 'webservice.php?subject=' + subject;*/
 /*                 });*/
 /*         });*/
 /*     </script>*/
@@ -416,8 +419,9 @@ class __TwigTemplate_f66a6b68e2103fa7756c8ea3e7c280cbf1a5f4ba679597487c0c8b2e158
 /*         <li data-id="search" data-button="Next"*/
 /*             data-options="tipLocation:top;tipAnimation:fade">*/
 /*             <h2>Search field</h2>*/
-/*             <p>Enter something you want to search.</p>*/
-/*             <p>It will automatically search for results.</p>*/
+/*             <p>Enter your search text here.*/
+/*                 <br>*/
+/*             It will automatically search for results.</p>*/
 /* */
 /*         </li>*/
 /* */
