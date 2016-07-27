@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="840bba8a-0c3c-4abf-9ccf-62aae5960bb0" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_posts/2014-07-17-project-1.markdown" afterPath="$PROJECT_DIR$/_posts/2014-07-17-project-1.markdown" />
-    </list>
+    <list default="true" id="840bba8a-0c3c-4abf-9ccf-62aae5960bb0" name="Default" comment="" />
     <ignored path="agency-jekyll-theme-gh-pages.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path=".idea/dataSources.local.xml" />
@@ -46,8 +44,8 @@
       <file leaf-file-name="2014-07-17-project-1.markdown" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/_posts/2014-07-17-project-1.markdown">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="119">
-              <caret line="7" column="32" selection-start-line="7" selection-start-column="32" selection-end-line="7" selection-end-column="32" />
+            <state relative-caret-position="238">
+              <caret line="14" column="0" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -415,12 +413,12 @@
       <workItem from="1469525057296" duration="12799000" />
       <workItem from="1469542857200" duration="7032000" />
       <workItem from="1469603702304" duration="4704000" />
-      <workItem from="1469613623464" duration="440000" />
+      <workItem from="1469613623464" duration="525000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="24975000" />
+    <option name="totallyTimeSpent" value="25060000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1616" height="876" extended-state="6" />
@@ -801,8 +799,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/_posts/2014-07-17-project-1.markdown">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" column="32" selection-start-line="7" selection-start-column="32" selection-end-line="7" selection-end-column="32" />
+        <state relative-caret-position="238">
+          <caret line="14" column="0" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
           <folding />
         </state>
       </provider>
