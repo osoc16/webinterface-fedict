@@ -1,6 +1,6 @@
 ---
 title: WSDL2DCAT converter
-subtitle: Backend development
+subtitle: Backend
 layout: default
 modal-id: 1
 date: 2016-07-16
@@ -9,6 +9,6 @@ thumbnail: convert-thumbnail.png
 alt: image-alt
 project-date: Juli 2016
 cont: Converting wsdl to dcat
-category: Backend development
-description: Convert standalone document descriptions of webservices from Fedict to linked data files. It also makes a linked data file of the relations between different services and their families.
+category: Backend
+description: Convert wsdl files that describe Fedict webservices to linked data files with our  <a href="https://github.com/osoc16/WSDL2DCAT" target="_blank"> converter</a>. It also makes a linked data file of the relations between different services and their families.
 ---

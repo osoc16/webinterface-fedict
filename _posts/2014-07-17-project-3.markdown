@@ -1,6 +1,6 @@
 ---
 title: Publishing
-subtitle: Backend development
+subtitle: Backend
 layout: default
 modal-id: 3
 date: 2016-07-16
@@ -9,6 +9,6 @@ thumbnail: publish-thumbnail.png
 alt: image-alt
 project-date: Juli 2016
 cont: Publishing linked data files
-category: Backend development
-description: Publishing the linked data files to make it accessible for data consumers. The publishing has been done without the need for a single common schema that all data shares.
+category: Backend
+description: Publishing the linked data files to make them accessible for data consumers. The publishing has been done without the need for a single common schema that all data shares.
 ---
