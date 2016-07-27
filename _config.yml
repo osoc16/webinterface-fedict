@@ -11,7 +11,7 @@ description: "Team LD-works from oSoc16"
 people:
 - name: Miguel De Strooper
   pic: MiguelGIF.gif
-  position: Backend developer: Miguel is a Master of Science in Industrial Engineering. His main skills are backend development and network managment.
+  position: Backend developer, Miguel is a Master of Science in Industrial Engineering. His main skills are backend development and network managment.
   social:
     - title: twitter
       url: https://twitter.com/Miguel_DeSt
@@ -20,7 +20,7 @@ people:
 
 - name: Umut Saglam
   pic: UmutGIF.gif
-  position: Backend developer: Umut is a Bachelor in Electronics & IT and oSoc alumni. His main skills are backend development and mobile development.
+  position: Backend developer, Umut is a Bachelor in Electronics & IT and oSoc alumni. His main skills are backend development and mobile development.
   social:
     - title: twitter
       url: https://twitter.com/umutsaglam1994
@@ -29,7 +29,7 @@ people:
 
 - name: Sander Meert
   pic: SanderMGIF.gif
-  position: Coach: Sander is a fullstack developer, oSoc alumni and ex-Open Knowledge intern. His skills range from coding for web to writing project proposals to bring in the big bucks.
+  position: Coach, Sander is a fullstack developer, oSoc alumni and ex-Open Knowledge intern. His skills range from coding for web to writing project proposals to bring in the big bucks.
   social:
     - title: twitter
       url: https://twitter.com/Sandmeert
