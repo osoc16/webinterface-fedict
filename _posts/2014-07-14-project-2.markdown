@@ -2,7 +2,7 @@
 title: Web interface
 subtitle: Website Design
 layout: default
-modal-id: 5
+modal-id: 2
 date: 2016-07-16
 img: webinterfaceMain.png
 thumbnail: webinterfaceMain-thumbnail.png
