@@ -10,5 +10,5 @@ alt: image-alt
 project-date: Juli 2016
 cont: Publishing linked data files
 category: Backend
-description: Publishing the linked data files to make them accessible for data consumers. Developers can query linked data from multiple sources at once and combine it without the need for a single common schema that all data shares
+description: Publishing the linked data files to make them accessible for data consumers. Developers can query linked data from multiple sources at once and combine it without the need for a single common schema that all data shares.
 ---

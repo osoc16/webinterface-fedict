@@ -4,7 +4,8 @@
     <list default="true" id="840bba8a-0c3c-4abf-9ccf-62aae5960bb0" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_includes/content.html" afterPath="$PROJECT_DIR$/_includes/content.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_includes/problems_solutions.html" afterPath="$PROJECT_DIR$/_includes/problems_solutions.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_includes/screenshots_grid.html" afterPath="$PROJECT_DIR$/_includes/screenshots_grid.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_posts/2014-07-14-project-2.markdown" afterPath="$PROJECT_DIR$/_posts/2014-07-14-project-2.markdown" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_posts/2014-07-17-project-3.markdown" afterPath="$PROJECT_DIR$/_posts/2014-07-17-project-3.markdown" />
     </list>
     <ignored path="agency-jekyll-theme-gh-pages.iws" />
@@ -25,110 +26,7 @@
     <favorites_list name="agency-jekyll-theme-gh-pages" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="modals.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/_includes/modals.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="168">
-              <caret line="15" column="57" selection-start-line="15" selection-start-column="57" selection-end-line="15" selection-end-column="57" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="2014-07-14-project-2.markdown" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/_posts/2014-07-14-project-2.markdown">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="204">
-              <caret line="12" column="70" selection-start-line="12" selection-start-column="70" selection-end-line="12" selection-end-column="70" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="2014-07-17-project-1.markdown" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/_posts/2014-07-17-project-1.markdown">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="204">
-              <caret line="12" column="159" selection-start-line="12" selection-start-column="159" selection-end-line="12" selection-end-column="159" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="2014-07-17-project-3.markdown" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/_posts/2014-07-17-project-3.markdown">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="204">
-              <caret line="12" column="157" selection-start-line="12" selection-start-column="157" selection-end-line="12" selection-end-column="157" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="agency.css" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/_includes/css/agency.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="8738">
-              <caret line="514" column="36" selection-start-line="514" selection-start-column="36" selection-end-line="514" selection-end-column="36" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="problems_solutions.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/_includes/problems_solutions.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="567">
-              <caret line="107" column="10" selection-start-line="107" selection-start-column="9" selection-end-line="107" selection-end-column="10" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="screenshots_grid.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/_includes/screenshots_grid.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="102">
-              <caret line="6" column="121" selection-start-line="6" selection-start-column="121" selection-end-line="6" selection-end-column="121" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="contact.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/_includes/contact.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="85">
-              <caret line="5" column="17" selection-start-line="5" selection-start-column="16" selection-end-line="5" selection-end-column="17" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="content.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/_includes/content.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="329">
-              <caret line="27" column="187" selection-start-line="27" selection-start-column="185" selection-end-line="27" selection-end-column="187" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="clients.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/_includes/clients.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="119">
-              <caret line="7" column="6" selection-start-line="7" selection-start-column="6" selection-end-line="7" selection-end-column="6" />
-              <folding>
-                <element signature="n#style#0;n#div#0;n#div#0;n#div#1;n#div#0;n#section#0;n#!!top" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -150,14 +48,14 @@
         <option value="$PROJECT_DIR$/_includes/contact.html" />
         <option value="$PROJECT_DIR$/_includes/modals.html" />
         <option value="$PROJECT_DIR$/_posts/2014-07-17-project-1.markdown" />
-        <option value="$PROJECT_DIR$/_posts/2014-07-14-project-2.markdown" />
-        <option value="$PROJECT_DIR$/_includes/screenshots_grid.html" />
         <option value="$PROJECT_DIR$/_config.yml" />
         <option value="$PROJECT_DIR$/_includes/css/agency.css" />
         <option value="$PROJECT_DIR$/_includes/clients.html" />
         <option value="$PROJECT_DIR$/_includes/problems_solutions.html" />
-        <option value="$PROJECT_DIR$/_includes/content.html" />
         <option value="$PROJECT_DIR$/_posts/2014-07-17-project-3.markdown" />
+        <option value="$PROJECT_DIR$/_includes/content.html" />
+        <option value="$PROJECT_DIR$/_includes/screenshots_grid.html" />
+        <option value="$PROJECT_DIR$/_posts/2014-07-14-project-2.markdown" />
       </list>
     </option>
   </component>
@@ -422,16 +320,16 @@
       <workItem from="1469603702304" duration="4704000" />
       <workItem from="1469613623464" duration="525000" />
       <workItem from="1469627823357" duration="3987000" />
-      <workItem from="1469689549653" duration="944000" />
+      <workItem from="1469689549653" duration="2331000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="29991000" />
+    <option name="totallyTimeSpent" value="31378000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1616" height="876" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24875" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -513,7 +411,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="5950">
           <caret line="350" column="4" selection-start-line="350" selection-start-column="4" selection-end-line="350" selection-end-column="4" />
-          <folding />
+          <folding>
+            <marker date="1469690544565" expanded="true" signature="8261:8462" ph="{...}" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -719,14 +619,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/_includes/head.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" column="53" selection-start-line="8" selection-start-column="53" selection-end-line="8" selection-end-column="53" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/_config.yml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="527">
@@ -739,15 +631,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="8738">
           <caret line="514" column="36" selection-start-line="514" selection-start-column="36" selection-end-line="514" selection-end-column="36" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/_includes/screenshots_grid.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="121" selection-start-line="6" selection-start-column="121" selection-end-line="6" selection-end-column="121" />
-          <folding />
+          <folding>
+            <marker date="1469690544565" expanded="true" signature="8261:8462" ph="{...}" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -763,7 +649,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/_includes/problems_solutions.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="567">
+        <state relative-caret-position="581">
           <caret line="107" column="10" selection-start-line="107" selection-start-column="9" selection-end-line="107" selection-end-column="10" />
           <folding />
         </state>
@@ -777,10 +663,42 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/_includes/head.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" column="53" selection-start-line="8" selection-start-column="53" selection-end-line="8" selection-end-column="53" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/_includes/content.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="329">
-          <caret line="27" column="187" selection-start-line="27" selection-start-column="185" selection-end-line="27" selection-end-column="187" />
+        <state relative-caret-position="207">
+          <caret line="19" column="38" selection-start-line="19" selection-start-column="38" selection-end-line="19" selection-end-column="38" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/_includes/screenshots_grid.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" column="89" selection-start-line="6" selection-start-column="89" selection-end-line="6" selection-end-column="89" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/_posts/2014-07-17-project-3.markdown">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="12" column="26" selection-start-line="12" selection-start-column="25" selection-end-line="12" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/_posts/2014-07-14-project-2.markdown">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" column="41" selection-start-line="7" selection-start-column="41" selection-end-line="7" selection-end-column="41" />
           <folding />
         </state>
       </provider>
@@ -793,26 +711,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/_posts/2014-07-14-project-2.markdown">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="12" column="70" selection-start-line="12" selection-start-column="70" selection-end-line="12" selection-end-column="70" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/_posts/2014-07-17-project-1.markdown">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="204">
-          <caret line="12" column="159" selection-start-line="12" selection-start-column="159" selection-end-line="12" selection-end-column="159" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/_posts/2014-07-17-project-3.markdown">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="12" column="157" selection-start-line="12" selection-start-column="157" selection-end-line="12" selection-end-column="157" />
+          <caret line="12" column="96" selection-start-line="12" selection-start-column="96" selection-end-line="12" selection-end-column="172" />
           <folding />
         </state>
       </provider>

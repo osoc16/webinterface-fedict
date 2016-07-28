@@ -10,5 +10,5 @@ alt: image-alt
 project-date: Juli 2016
 cont: Home page webinterface
 category: Frontend
-description: This is a screenshot of the <a href="http://wsdl2dcat.be/" target="_blank">web interface</a>. In purple you have the search field where you can search between catalog, dataset and distribution. In red you have the details of the result and with the help button you can start the tutorial. This link brings you to our web interface http://wsdl2dcat.be/.
+description: This is a screenshot of the <a href="http://wsdl2dcat.be/" target="_blank">web interface</a>. In purple you have the search field where you can browse between catalog, dataset and distribution. In red you have the details of the result and with the help button you can start the tutorial. This link brings you to our <a href="http://wsdl2dcat.be/" target="_blank"> web interface</a>.
 ---
